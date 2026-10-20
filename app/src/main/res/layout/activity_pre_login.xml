@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/prelogin_bg">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- MODULE 1: Top Green Header Card with Pattern Watermark & Dual Login Buttons -->
+            <FrameLayout
+                android:id="@+id/greenHeaderCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_prelogin_header_card"
+                android:paddingBottom="24dp"
+                android:elevation="6dp">
+
+                <!-- Vertical Pattern Watermark on Left (Exact Official Absher Pattern) -->
+                <ImageView
+                    android:id="@+id/ivHeaderPatternWatermark"
+                    android:layout_width="173dp"
+                    android:layout_height="138dp"
+                    android:layout_gravity="top|start"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_absher_header_pattern"
+                    android:contentDescription="Background Pattern" />
+
+                <!-- Header Content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Top Right Action Icons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|end"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingEnd="20dp">
+
+                        <ImageView android:id="@+id/ivSettings"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="18dp"
+                            android:src="@drawable/setting"
+                            app:tint="@color/prelogin_header_action_tint"
+                            android:contentDescription="Settings" />
+
+                        <ImageView android:id="@+id/ivNotifications"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_bell_outline"
+                            app:tint="@color/prelogin_header_action_tint"
+                            android:contentDescription="Notifications" />
+                    </LinearLayout>
+
+                    <!-- Core Branding & Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:paddingHorizontal="24dp">
+
+                        <!-- Two Logos: Absher (White) & Ministry Coat of Arms (White) -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:layout_marginEnd="20dp"
+                                android:src="@drawable/ab2" app:tint="@color/prelogin_logo_tint"
+                                android:contentDescription="Absher Logo" />
+
+                            <ImageView
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ministry_ic" app:tint="@color/prelogin_logo_tint"
+                                android:contentDescription="Ministry Logo" />
+                        </LinearLayout>
+
+                        <!-- Main Title -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:text="@string/absher_e_services" android:textColor="@color/prelogin_header_title"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <!-- BUTTON 1: Mint Green 'Log In' Button -->
+                        <LinearLayout
+                            android:id="@+id/btnLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="28dp"
+                            android:background="@drawable/bg_btn_prelogin_login"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="26dp"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/ab2"
+                                app:tint="@color/prelogin_btn_login_icon_tint"
+                                android:contentDescription="Login Icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/log_in" android:textColor="@color/prelogin_btn_login_text"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- BUTTON 2: Dark 'Log In with Nafath' Button -->
+                        <LinearLayout
+                            android:id="@+id/btnLoginNafath"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/bg_btn_prelogin_nafath"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="22dp"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/ic_nafath_logo"
+                                android:contentDescription="Nafath Icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/prelogin_login_nafath" android:textColor="@color/prelogin_btn_nafath_text"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- MODULE 2: Public Services Section Header -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="22dp"
+                android:paddingTop="26dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tvPublicServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/public_services"
+                    android:textColor="@color/prelogin_section_title"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textFontWeight="700"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/tvSeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all"
+                    android:textColor="@color/prelogin_see_all"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:paddingTop="2dp" />
+            </RelativeLayout>
+
+            <!-- MODULE 3: Horizontal Scroll Menu Items (2 rows Grid) -->
+            <HorizontalScrollView
+                android:id="@+id/hsvPublicServices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingHorizontal="14dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never">
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rowCount="2"
+                    android:orientation="vertical"
+                    android:paddingVertical="4dp">
+
+                    <!-- 1. Manage Digital Identity -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardManageIdentity"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_public_profile"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Identity" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/manage_digital_identity_label"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 2. Authentication Services -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAuthServices"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_fingerprint"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Authentication" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/auth_services_title"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 3. Absher Travel for Visitors -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardTravelVisitor"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_public_map"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Travel" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/prelogin_travel_visitors"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 4. View Digital Documents -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewDocuments"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_public_card"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Documents" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/prelogin_view_documents"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 5. Civil Affairs Appointment -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCivilAppointment"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_public_history"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Civil Affairs" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/prelogin_civil_appointment"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 6. Visitor Digital Document -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardVisitorDoc"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_public_card"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Visitor Doc" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/prelogin_visitor_document"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 7. Passport Appointments -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardPassportAppt"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_public_history"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Passport Appt" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/prelogin_passport_appointment"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 8. Absher Activation Sites -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardActivationSites"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_public_kiosk"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Activation Sites" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/prelogin_activation_sites"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 9. Absher Authenticator -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAuthenticator"
+                        android:layout_width="168dp"
+                        android:layout_height="138dp"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/prelogin_card_bg"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/prelogin_card_stroke"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="18dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_public_lock_stars"
+                                app:tint="@color/prelogin_card_icon_tint"
+                                android:contentDescription="Authenticator" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/prelogin_authenticator"
+                                android:textColor="@color/prelogin_card_title"
+                                android:textSize="14sp" android:textStyle="bold" android:lineSpacingExtra="2dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </GridLayout>
+            </HorizontalScrollView>
+
+            <!-- MODULE 4: Footer Container (Directly after cards) -->
+            <LinearLayout
+                android:id="@+id/footerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/prelogin_powered_by"
+                        android:textColor="@color/prelogin_footer_text"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="4dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_nic_logo"
+                        android:contentDescription="National Information Center" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/prelogin_all_rights"
+                    android:textColor="@color/prelogin_footer_text"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

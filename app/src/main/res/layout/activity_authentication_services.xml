@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_background"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/ivBack"
+            android:text="@string/auth_services_title"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Content Area (ZERO Bottom Nav) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAuthRequests"
+            android:layout_width="180dp"
+            android:layout_height="145dp"
+            app:cardBackgroundColor="@color/prelogin_card_bg"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/prelogin_card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/ic_fingerprint"
+                    app:tint="@color/prelogin_card_icon_tint"
+                    android:contentDescription="Fingerprint" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Authentication Requests"
+                    android:textColor="@color/prelogin_card_title"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="2dp"
+                    android:maxLines="2" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</RelativeLayout>

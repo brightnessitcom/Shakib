@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorNafathBg"
+    android:orientation="vertical">
+
+    <!-- Top Bar: Close Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="6dp">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Close"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/colorNafathPrimary" />
+    </LinearLayout>
+
+    <!-- Verification Timer Card (Matching Reference App) -->
+    <LinearLayout
+        android:id="@+id/layoutTimerBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_nafath_top_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+        <TextView
+            android:id="@+id/tvTimerLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nafath_complete_verification_in"
+            android:textColor="@color/colorNafathTextPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTimerPill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_nafath_timer_pill"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="03:00"
+            android:textColor="@color/colorNafathTimerPillText"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Top Loading Progress Bar -->
+    <ProgressBar
+        android:id="@+id/pbWebLoading"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="@color/colorNafathPrimary"
+        android:visibility="gone" />
+
+    <!-- Embedded WebView Container -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/webViewNafath"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Centered Loading Spinner -->
+        <ProgressBar
+            android:id="@+id/pbCenterLoading"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/colorNafathPrimary"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

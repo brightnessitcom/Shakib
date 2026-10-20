@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvExpandedTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/ivBack"
+            android:text="Details"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bottom_nav_bg"
+        app:elevation="8dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
+        app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottom_navigation"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Card Header -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:strokeColor="@color/divider_color"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/ivExpandedIcon"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/ic_services_outline"
+                        app:tint="@color/icon_tint_primary"
+                        android:contentDescription="Icon" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvExpandedMainTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Service Item Title"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvExpandedSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Official Absher Verified Service"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Key-Value Table Details Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:strokeColor="@color/divider_color"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="SERVICE INFORMATION"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <!-- Row 1 -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Status"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="Active &amp; Verified"
+                            android:textColor="@color/icon_tint_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_color" />
+
+                    <!-- Row 2 -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reference Number"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="REF-2026-98124"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_color" />
+
+                    <!-- Row 3 -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Issuing Authority"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="Ministry of Interior"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:backgroundTint="@color/login_btn_active_bg"
+                app:cornerRadius="16dp"
+                app:elevation="0dp"
+                android:text="View Full Official Record"
+                android:textColor="@color/login_btn_active_text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

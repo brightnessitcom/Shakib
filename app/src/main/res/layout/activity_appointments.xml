@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_background"
+        android:paddingHorizontal="14dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/ic_back_green"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/ivBack"
+            android:text="Verify Details"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Action Button (ZERO Bottom Nav) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVerifyDetails"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        app:backgroundTint="@color/login_btn_disabled_bg"
+        app:cornerRadius="10dp"
+        app:elevation="0dp"
+        android:textAllCaps="false"
+        android:text="Verify Details"
+        android:textColor="@color/login_btn_disabled_text"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <!-- Scrollable Body -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/btnVerifyDetails"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp">
+
+            <!-- Card: Verify Details Form -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Header inside card -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="14dp"
+                        android:text="To use the public services you have to provide a few of your details"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_color" />
+
+                    <!-- Form Fields -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Field 1: ID Number -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_input_field_bg"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ID Number"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/etIdNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:background="@null"
+                                android:hint="Enter ID Number"
+                                android:inputType="number"
+                                android:textColor="@color/text_primary"
+                                android:textColorHint="@color/login_input_hint"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Field 2: Calendar -->
+                        <LinearLayout
+                            android:id="@+id/layoutCalendar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/shape_input_field_bg"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Calendar"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tvCalendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Gregorian"
+                                android:textColor="@color/text_primary"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Field 3: Date of Birth -->
+                        <LinearLayout
+                            android:id="@+id/layoutDob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/shape_input_field_bg"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date of Birth"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/etDob"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:background="@null"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:hint="Select Date of Birth"
+                                android:textColor="@color/text_primary"
+                                android:textColorHint="@color/login_input_hint"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Captcha Container -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/bg_captcha_container"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <!-- Captcha image + refresh button -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="52dp"
+                                    android:layout_weight="1"
+                                    app:cardBackgroundColor="#FFFFFF"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <ImageView
+                                        android:id="@+id/ivCaptchaImage"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:scaleType="fitXY" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <ImageView
+                                    android:id="@+id/ivRefreshCaptcha"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:layout_marginStart="12dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:padding="8dp"
+                                    android:src="@drawable/ic_refresh_green"
+                                    app:tint="@color/icon_tint_primary"
+                                    android:contentDescription="Refresh Captcha" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/shape_input_field_bg">
+
+                                <EditText
+                                    android:id="@+id/etCaptchaCode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Enter the code above"
+                                    android:inputType="number"
+                                    android:paddingHorizontal="14dp"
+                                    android:textColor="@color/text_primary"
+                                    android:textColorHint="@color/login_input_hint"
+                                    android:textSize="14sp" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Info Card Below -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Left blue accent stripe -->
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shape_notice_left_blue_bar" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="1dp"
+                            android:src="@drawable/ic_info_circle"
+                            android:contentDescription="Info" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:lineSpacingExtra="3dp"
+                            android:text="If you're booking on behalf of someone else, provide their ID Number and Date of Birth. If the beneficiary is under 15 years old or doesn't have an ID, enter the details of the household parent"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

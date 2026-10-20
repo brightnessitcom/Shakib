@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Toolbar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_background"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/ivBack"
+            android:text="Title"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bottom_nav_bg"
+        app:elevation="8dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
+        app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottom_navigation"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- ===================== TOP SECTION (#161719) ===================== -->
+
+            <!-- Search Bar -->
+            <LinearLayout
+                android:id="@+id/llSearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/bg_search_bar"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_search_18"
+                    app:tint="#8A9095"
+                    android:contentDescription="Search" />
+
+                <TextView
+                    android:id="@+id/tvSearchHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Search by Vehicle, Service"
+                    android:textColor="#8A9095"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- "Vehicles" section header -->
+            <TextView
+                android:id="@+id/tvSectionHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Vehicles"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Empty state (car icon + No Vehicles text) -->
+            <LinearLayout
+                android:id="@+id/llEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="28dp"
+                android:paddingBottom="28dp"
+                android:paddingHorizontal="24dp">
+
+                <ImageView
+                    android:id="@+id/ivCenterIcon"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    android:src="@drawable/ic_no_vehicles_car"
+                    app:tint="@color/empty_state_icon_tint" />
+
+                <TextView
+                    android:id="@+id/tvHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:text="No Vehicles"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Once you have vehicles they will display\nhere"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- ===================== VEHICLE SERVICES SECTION ===================== -->
+            <LinearLayout
+                android:id="@+id/llVehicleServicesSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/preferred_services_bg">
+
+                <!-- Top-left subtle vertical bars pattern -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="173dp"
+                        android:layout_height="220dp"
+                        android:layout_gravity="top|start"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/ic_absher_header_pattern"
+                        android:contentDescription="Background Pattern" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="8dp">
+
+                        <!-- "Vehicle Services" title -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="Vehicle Services"
+                            android:textColor="@color/text_primary"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <!-- ─────────── Plate Digital Wallet: Full-width horizontal card ─────────── -->
+                        <LinearLayout
+                            android:id="@+id/cardPlateDigitalWallet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="14dp"
+                            android:layout_marginBottom="12dp"
+                            android:background="@drawable/bg_vehicle_card"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="18dp"
+                            android:paddingVertical="18dp">
+
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_plate_wallet_tile"
+                                app:tint="@color/icon_tint_primary" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="16dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Plate Digital Wallet"
+                                    android:textColor="@color/vehicle_card_title"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="Manage your most valued plates."
+                                    android:textColor="@color/vehicle_card_desc"
+                                    android:textSize="12.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- ─────────── Horizontal Scrollable Service Cards (Scroll Right) ─────────── -->
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:paddingBottom="16dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <!-- 1. Traffic Violations -->
+                                <LinearLayout
+                                    android:id="@+id/cardTrafficViolations"
+                                    android:layout_width="156dp"
+                                    android:layout_height="142dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/bg_vehicle_card"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <ImageView
+                                        android:layout_width="42dp"
+                                        android:layout_height="42dp"
+                                        android:src="@drawable/ic_traffic_violations_tile"
+                                        app:tint="@color/icon_tint_primary" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="bottom"
+                                        android:lineSpacingExtra="2.5dp"
+                                        android:text="Traffic\nViolations"
+                                        android:textColor="@color/vehicle_card_title"
+                                        android:textSize="13.5sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <!-- 2. Waive or Object Accidents -->
+                                <LinearLayout
+                                    android:id="@+id/cardWaiveAccident"
+                                    android:layout_width="156dp"
+                                    android:layout_height="142dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/bg_vehicle_card"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <ImageView
+                                        android:layout_width="42dp"
+                                        android:layout_height="42dp"
+                                        android:src="@drawable/ic_waive_accident_tile"
+                                        app:tint="@color/icon_tint_primary" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="bottom"
+                                        android:lineSpacingExtra="2.5dp"
+                                        android:text="Waive or Object\nAccidents"
+                                        android:textColor="@color/vehicle_card_title"
+                                        android:textSize="13.5sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <!-- 3. Manage Vehicle Ownership -->
+                                <LinearLayout
+                                    android:id="@+id/cardManageOwnership"
+                                    android:layout_width="156dp"
+                                    android:layout_height="142dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/bg_vehicle_card"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <ImageView
+                                        android:layout_width="42dp"
+                                        android:layout_height="42dp"
+                                        android:src="@drawable/ic_manage_vehicle_ownership_tile"
+                                        app:tint="@color/icon_tint_primary" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="bottom"
+                                        android:lineSpacingExtra="2.5dp"
+                                        android:text="Manage Vehicle\nOwnership"
+                                        android:textColor="@color/vehicle_card_title"
+                                        android:textSize="13.5sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <!-- 4. Request Accident Report -->
+                                <LinearLayout
+                                    android:id="@+id/cardRequestAccidentReport"
+                                    android:layout_width="156dp"
+                                    android:layout_height="142dp"
+                                    android:background="@drawable/bg_vehicle_card"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <ImageView
+                                        android:layout_width="42dp"
+                                        android:layout_height="42dp"
+                                        android:src="@drawable/ic_request_accident_report_tile"
+                                        app:tint="@color/icon_tint_primary" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:gravity="bottom"
+                                        android:lineSpacingExtra="2.5dp"
+                                        android:text="Request\nAccident Report"
+                                        android:textColor="@color/vehicle_card_title"
+                                        android:textSize="13.5sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

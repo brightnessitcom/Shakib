@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Person Head -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:pathData="M15.5,2 a7.5,7.5 0 1,0 0.001,0" />
+    <!-- Person Body -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:pathData="M2.5,38.5 C2.5,28.5 11,23 20.5,23 M2.5,38.5 Q2.5,42.5 6.5,42.5 H18.5" />
+    <!-- Check Badge Circle -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:pathData="M32.5,19.5 a13,13 0 1,0 0.001,0" />
+    <!-- Checkmark Inside Badge -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M26.5,32.5 L30.5,36.5 L38.5,28.5" />
+</vector>
+

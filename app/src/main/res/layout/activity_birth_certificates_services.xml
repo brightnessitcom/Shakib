@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/ivBack"
+            android:text="Birth Certificates Services"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bottom_nav_bg"
+        app:elevation="8dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
+        app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- Bottom Action Button: View Requests -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnViewRequests"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="@color/btn_service_action_bg"
+        android:text="View Requests"
+        android:textAllCaps="false"
+        android:textColor="@color/btn_service_action_text"
+        android:textSize="15.5sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp" />
+
+    <!-- Main Content: 2-Column Grid -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp">
+
+        <!-- Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Tile 1: View Birth Certificates -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewBirthCerts"
+                android:layout_width="0dp"
+                android:layout_height="136dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_birth_certificate_tile"
+                        android:contentDescription="View Birth Certificates" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="View Birth Certificates"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13.5sp"
+                        android:textStyle="bold"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeMaxTextSize="13.5sp"
+                        app:autoSizeStepGranularity="0.5sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tile 2: Update Birth Certificate -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardUpdateBirthCert"
+                android:layout_width="0dp"
+                android:layout_height="136dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_birth_certificate_update_tile"
+                        android:contentDescription="Update Birth Certificate" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="Update Birth Certificate"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13.5sp"
+                        android:textStyle="bold"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeMaxTextSize="13.5sp"
+                        app:autoSizeStepGranularity="0.5sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <!-- Tile 3: Re-Issue Birth Certificate -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardReissueBirthCert"
+                android:layout_width="0dp"
+                android:layout_height="136dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_birth_certificate_reissue_tile"
+                        android:contentDescription="Re-Issue Birth Certificate" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="Re-Issue Birth Certificate"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13.5sp"
+                        android:textStyle="bold"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMinTextSize="10sp"
+                        app:autoSizeMaxTextSize="13.5sp"
+                        app:autoSizeStepGranularity="0.5sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Empty Right Placeholder to keep 2-column alignment -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

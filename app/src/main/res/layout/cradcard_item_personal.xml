@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/card_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@+id/header_layout"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/card_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="12dp"
+                app:shapeAppearanceOverlay="@style/RoundedCornerImage"/>
+
+            <TextView
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:id="@+id/card_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/card_title_placeholder"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/arrow_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_arrow_down"
+                app:tint="@color/text_secondary"
+                android:contentDescription="@string/arrow_down_icon_description"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator_line"
+            android:background="@color/divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/card_content"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/nameuser"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iqama Holder Name"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Birth City"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/birthCity"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Birth Country/Region"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/birthCountry"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bangladesh"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date of Birth"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/dateOfBirth"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="09/03/1425"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marital Status"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/maritalStatus"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SINGLE"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No. of sponsorship transfers"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/sponsorshipTransfers"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Religion"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/religion"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Islam"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Work Permit"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/workPermit"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Biometrics Collected"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/biometricsCollected"
+                android:paddingBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yes"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Travel Status"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="ltr"
+                android:id="@+id/travelStatus"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inside"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

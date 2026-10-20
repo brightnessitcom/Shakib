@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="24dp"
+    app:cardBackgroundColor="@color/prelogin_settings_card_bg"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    app:strokeColor="@color/prelogin_card_stroke"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvExitTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exit_service_title"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvExitBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/exit_service_body"
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                android:text="@string/exit_service_no"
+                android:textColor="@color/icon_tint_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                android:text="@string/exit_service_yes"
+                android:textColor="@color/icon_tint_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

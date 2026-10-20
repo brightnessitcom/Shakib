@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background">
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/app_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="26dp">
+
+            <!-- MODULE 1: Top Deep Green Header with Overlapping Floating Profile Card -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Logos & Action Icons Row -->
+                <RelativeLayout
+                    android:id="@+id/headerIconsBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@color/dashboard_header_bg"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <!-- Absher & Ministry Logos -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ab2"
+                            app:tint="@color/dashboard_header_logo_tint"
+                            android:contentDescription="Absher Logo" />
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            android:src="@drawable/ministry_ic"
+                            app:tint="@color/dashboard_header_logo_tint"
+                            android:contentDescription="Ministry Logo" />
+                    </LinearLayout>
+
+                    <!-- Top Right Action Icons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/searchIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="18dp"
+                            android:src="@drawable/ic_search_green"
+                            app:tint="@color/dashboard_header_action_tint"
+                            android:contentDescription="Search" />
+
+                        <ImageView
+                            android:id="@+id/settingsIcon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="18dp"
+                            android:src="@drawable/setting"
+                            app:tint="@color/dashboard_header_action_tint"
+                            android:contentDescription="Settings" />
+
+                        <ImageView
+                            android:id="@+id/notificationsIcon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_bell_outline"
+                            app:tint="@color/dashboard_header_action_tint"
+                            android:contentDescription="Notifications" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- Header Background Extension (Behind top ~70% of profileCard) -->
+                <View
+                    android:id="@+id/headerGreenExtension"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_below="@id/headerIconsBar"
+                    android:background="@color/dashboard_header_bg" />
+
+                <!-- Profile Card: Overlaps the green-to-dark junction -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/profileCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/headerIconsBar"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/profileImageView"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearanceOverlay="@style/RoundedCornerImage" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvProfileName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_primary"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text="MD SAKIB AHMED" />
+
+                            <TextView
+                                android:id="@+id/tvProfileNameArabic"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="16sp"
+                                android:visibility="gone"
+                                tools:text="محمد صاخب أحمد" />
+
+                            <TextView
+                                android:id="@+id/tvProfileId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp"
+                                tools:text="ID No.: 2624967887" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <!-- MODULE 2: Main Dark Body Content (#161719) -->
+
+            <!-- "Take a Quick Survey" Banner Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardQuickSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/survey_card_bg"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/ivSurveyIcon"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_survey_bubble"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="Survey" />
+
+                    <LinearLayout
+                        android:id="@+id/llSurveyContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toEndOf="@id/ivSurveyIcon"
+                        android:layout_marginStart="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/survey_title"
+                            android:textColor="@color/survey_card_title"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/survey_subtitle"
+                            android:textColor="@color/survey_card_body"
+                            android:textSize="12sp"
+                            android:lineSpacingExtra="2dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btnStartSurvey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@id/llSurveyContent"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/survey_action"
+                        android:textColor="@color/survey_card_action"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 4. "My Digital Documents" Header -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/documents_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/see_all"
+                    android:textColor="#72D09D"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!-- 5. Digital ID Card Container -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/squareCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/idImageView"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:scaleType="fitXY"
+                            app:layout_constraintDimensionRatio="H,1.58:1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                        <FrameLayout
+                            android:id="@+id/lottieOverlay"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@color/card_background"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toTopOf="@id/idImageView"
+                            app:layout_constraintBottom_toBottomOf="@id/idImageView"
+                            app:layout_constraintStart_toStartOf="@id/idImageView"
+                            app:layout_constraintEnd_toEndOf="@id/idImageView">
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/idLoadingAnimation"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                app:lottie_autoPlay="true"
+                                app:lottie_loop="true"
+                                app:lottie_rawRes="@raw/absher_loading" />
+                        </FrameLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Expiry / Document Status Alert Banner (Shown dynamically only if expired) -->
+                    <LinearLayout
+                        android:id="@+id/llIdError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/doc_error_container_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_error_circle_red"
+                            android:contentDescription="Error Icon" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/document_expired_banner_text"
+                            android:textColor="@color/doc_error_text"
+                            android:textSize="12sp"
+                            android:lineSpacingExtra="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 6. Quick Access Section Container -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@color/quick_access_bg">
+
+                <!-- Watermark Pattern -->
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="top|start"
+                    android:alpha="0.12"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/bg_fuda_fyda"
+                    app:tint="@color/quick_access_pattern_tint"
+                    android:contentDescription="Pattern Watermark" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="14dp">
+
+                    <!-- Quick Access Section Header -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/quick_access_title"
+                        android:textColor="@color/quick_access_title_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <!-- 1. My Vehicles (Full Width Card) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardMyVehicles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/card_background"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp">
+
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:src="@drawable/ic_car"
+                                app:tint="@color/icon_tint_primary"
+                                android:contentDescription="Car" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/my_vehicles_title"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="@string/my_vehicles_subtitle"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp"
+                                    android:lineSpacingExtra="2dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 2. Grid Row 1: Authentication Services & Absher Travel -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:orientation="horizontal">
+
+                        <!-- Authentication Services -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAuthServices"
+                            android:layout_width="0dp"
+                            android:layout_height="136dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardBackgroundColor="@color/card_background"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:paddingTop="14dp"
+                                android:paddingBottom="12dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@drawable/ic_fingerprint"
+                                    app:tint="@color/icon_tint_primary"
+                                    android:contentDescription="Authentication" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:text="@string/auth_services_title"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="13.5sp"
+                                    android:textStyle="bold"
+                                    android:lineSpacingExtra="2dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Absher Travel -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAbsherTravel"
+                            android:layout_width="0dp"
+                            android:layout_height="136dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardBackgroundColor="@color/card_background"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:paddingTop="14dp"
+                                android:paddingBottom="12dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@drawable/ic_travel"
+                                    app:tint="@color/icon_tint_primary"
+                                    android:contentDescription="Travel" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:text="@string/absher_travel_title"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="13.5sp"
+                                    android:textStyle="bold"
+                                    android:lineSpacingExtra="2dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- 3. Grid Row 2: Report Minor Accident & Update Resident Photo -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:orientation="horizontal">
+
+                        <!-- Report Minor Accident -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardReportAccident"
+                            android:layout_width="0dp"
+                            android:layout_height="136dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardBackgroundColor="@color/card_background"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:paddingTop="14dp"
+                                android:paddingBottom="12dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@drawable/ic_accident_outline"
+                                    app:tint="@color/icon_tint_primary"
+                                    android:contentDescription="Accident" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:text="@string/report_minor_accident"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="13.5sp"
+                                    android:textStyle="bold"
+                                    android:lineSpacingExtra="2dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Update Resident Photo -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardUpdatePhoto"
+                            android:layout_width="0dp"
+                            android:layout_height="136dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardBackgroundColor="@color/card_background"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:paddingTop="14dp"
+                                android:paddingBottom="12dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@drawable/ic_photo_id"
+                                    app:tint="@color/icon_tint_primary"
+                                    android:contentDescription="Update Photo" />
+
+                                <TextView
+                                    android:id="@+id/updateResidentPhotoTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:text="@string/update_resident_photo"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="13.5sp"
+                                    android:textStyle="bold"
+                                    android:lineSpacingExtra="2dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- 4. My Weapons (Full Width Card) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardMyWeapons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/card_background"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="16dp"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_weapon_outline"
+                                app:tint="@color/icon_tint_primary"
+                                android:contentDescription="Weapons" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/my_weapons"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="@string/my_weapons_subtitle"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp"
+                                    android:lineSpacingExtra="2dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Preserved Extra Cards (Hidden to match exact Absher Quick Access design) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardManageDigitalIdentity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardDigitalDocuments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardLaborImport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

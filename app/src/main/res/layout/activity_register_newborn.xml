@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/ivClose"
+            android:text="@string/register_newborn"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bottom_nav_bg"
+        app:elevation="8dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
+        app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- Center Content: Cannot Proceed State -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottom_navigation"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp">
+
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_circle_red">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_close"
+                android:contentDescription="icon"
+                app:tint="#FFFFFF" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/cannot_proceed"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/no_new_born_available"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

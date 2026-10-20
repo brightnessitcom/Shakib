@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Solid Blue Circle Background matching official Absher (#296FC2 in Light, #3D80CE in Dark) -->
+    <path
+        android:fillColor="@color/login_info_icon_bg"
+        android:pathData="M 12,0 C 18.627,0 24,5.373 24,12 C 24,18.627 18.627,24 12,24 C 5.373,24 0,18.627 0,12 C 0,5.373 5.373,0 12,0 Z" />
+
+    <!-- Crisp White Lowercase 'i' Circular Dot -->
+    <path
+        android:fillColor="@color/login_info_icon_glyph"
+        android:pathData="M 12,5.1 C 12.83,5.1 13.5,5.77 13.5,6.6 C 13.5,7.43 12.83,8.1 12,8.1 C 11.17,8.1 10.5,7.43 10.5,6.6 C 10.5,5.77 11.17,5.1 12,5.1 Z" />
+
+    <!-- Crisp White Lowercase 'i' Stem with Serifs matching official Absher Typography -->
+    <path
+        android:fillColor="@color/login_info_icon_glyph"
+        android:pathData="M 9.4,9.8 H 13.1 V 17.2 H 14.8 V 19.0 H 9.2 V 17.2 H 10.9 V 12.0 L 9.4,10.8 Z" />
+</vector>

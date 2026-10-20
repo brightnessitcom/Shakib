@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <group
+        android:pivotX="23"
+        android:pivotY="24"
+        android:scaleX="1.4"
+        android:scaleY="1.4">
+
+        <!-- Left document / violation ticket frame -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M11,9 H22.5 A2.5,2.5 0 0,1 25,11.5 V36.5 A2.5,2.5 0 0,1 22.5,39 H11 A2.5,2.5 0 0,1 8.5,36.5 V11.5 A2.5,2.5 0 0,1 11,9 Z"
+            android:strokeWidth="1.45"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Document horizontal lines and bottom dot + line -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M13,16 H20.5 M13,22 H20.5 M13,28 H20.5 M13,34 H13.6 M16.8,34 H20.5"
+            android:strokeWidth="1.45"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Right traffic cone outline and base -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M25,33 L29.2,23.5 A0.8,0.8 0 0,1 30.6,23.5 L36,39 M22.5,39 H37.5"
+            android:strokeWidth="1.45"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Traffic cone horizontal stripes -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M27,28.8 H32.4 M25,34 H34.2"
+            android:strokeWidth="1.45"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+    </group>
+
+</vector>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/card_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@+id/header_layout"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/card_icon"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/hajj_pc"
+                app:tint="@color/text_secondary"
+                android:scaleType="centerInside"
+                android:layout_marginEnd="12dp"/>
+
+            <TextView
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:id="@+id/card_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Card_Title"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/arrow_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:tint="@color/text_secondary"
+                android:src="@drawable/ic_arrow_down"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator_line"
+            android:background="@color/divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/card_content"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hajj Status"/>
+
+            <TextView
+                android:id="@+id/hajjStatus"
+                android:textSize="13sp"
+                android:textColor="#72D09D"
+                android:background="@drawable/bg_hajj_status"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="18dp"
+                android:text="Eligible for Hajj"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/ic_dot_green"
+                android:drawablePadding="6dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:text="Last Hajj year"/>
+
+            <TextView
+                android:id="@+id/lastHajjYear"
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:paddingBottom="4dp"
+                android:visibility="gone"
+                android:text=""/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

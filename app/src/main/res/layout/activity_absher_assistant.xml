@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background">
+
+    <!-- STEP 1: CONSENT AGREEMENT SCREEN -->
+    <RelativeLayout
+        android:id="@+id/layoutConsent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background"
+        android:visibility="visible">
+
+        <!-- Top-Left Watermark Pattern -->
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="28dp"
+            android:alpha="0.06"
+            android:contentDescription="Pattern Watermark"
+            android:scaleType="fitStart"
+            android:src="@drawable/bg_fuda_fyda"
+            app:tint="@color/text_primary" />
+
+        <!-- Top Close Icon -->
+        <ImageView
+            android:id="@+id/ivCloseConsent"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="46dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Close"
+            android:focusable="true"
+            android:padding="2dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/icon_tint_primary" />
+
+        <!-- Scrollable Body Content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llConsentBottom"
+            android:layout_below="@+id/ivCloseConsent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingHorizontal="14dp"
+                android:paddingTop="18dp"
+                android:paddingBottom="24dp">
+
+                <ImageView
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:contentDescription="AI Assistant"
+                    android:src="@drawable/ic_chat"
+                    app:tint="@color/icon_tint_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="Consent Agreement"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:lineSpacingExtra="3.5dp"
+                    android:text="To personalize your experience on Absher and customize it to your usage and preferences, please agree to share your basic information with AI-enabled systems. This includes your personal information, as well as data related to dependents, family members, domestic workers, and your vehicles. This helps create an integrated digital profile that facilitates the delivery of proactive and personalized services for you and your family, and enhances your overall service experience through intelligent data analysis. It also allows you to authorize the platform to carry out actions —such as renewing IDs or passports —subject to your approval for each transaction."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13.5sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:lineSpacingExtra="3.5dp"
+                    android:text="This information is shared only with your consent. The service is entirely optional, and you may cancel and delete your data at any time."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13.5sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Bottom Checkbox + Start Conversation Button -->
+        <LinearLayout
+            android:id="@+id/llConsentBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:paddingHorizontal="14dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="18dp">
+
+            <LinearLayout
+                android:id="@+id/llConsentCheckRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+
+                <CheckBox
+                    android:id="@+id/cbConsent"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="2dp"
+                    android:background="@drawable/consent_checkbox_selector"
+                    android:button="@null"
+                    android:clickable="false"
+                    android:focusable="false" />
+
+                <TextView
+                    android:id="@+id/tvTermsText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:text="Before proceeding read and agree to Absher's Terms &amp; Conditions."
+                    android:textColor="@color/text_primary"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartConversation"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Start Conversation"
+                android:textAllCaps="false"
+                android:textColor="@color/login_btn_disabled_text"
+                android:textSize="15.5sp"
+                app:backgroundTint="@color/login_btn_disabled_bg"
+                app:cornerRadius="12dp"
+                app:elevation="0dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- STEP 2: ABSHER ASSISTANT CHAT SCREEN -->
+    <RelativeLayout
+        android:id="@+id/layoutChat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:background="@color/app_background"
+            android:paddingTop="32dp">
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="Close"
+                android:focusable="true"
+                android:padding="2dp"
+                android:src="@drawable/ic_close"
+                app:tint="@color/icon_tint_primary" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="24dp"
+                android:layout_toEndOf="@+id/ivClose"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Absher Assistant"
+                    android:textColor="@color/text_primary"
+                    android:textSize="19.5sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="Available 24/7"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13.5sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/chatScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llInput"
+            android:layout_below="@+id/toolbar"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="10dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/llMessagesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/bg_chat_avatar_circle"
+                        android:contentDescription="Assistant Avatar"
+                        android:padding="8dp"
+                        android:src="@drawable/ab2"
+                        app:tint="@color/icon_tint_primary" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        app:cardBackgroundColor="@color/card_background"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/divider_color"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="285dp"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Absher Assistant"
+                                android:textColor="@color/icon_tint_primary"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/tvGreeting"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Hello MD SAKIB 💚"
+                                android:textColor="@color/text_primary"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:lineSpacingExtra="3dp"
+                                android:text="I am your Absher Smart Assistant, here to help you with our services and answer your questions.\nHow may I assist you today?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/llInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/app_background"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_chat_input_dark_pill"
+                android:gravity="center_vertical"
+                android:paddingStart="18dp"
+                android:paddingEnd="7dp">
+
+                <EditText
+                    android:id="@+id/etMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Type your message"
+                    android:imeOptions="actionSend"
+                    android:inputType="textCapSentences"
+                    android:singleLine="true"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/btnSend"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/bg_chat_send_circle"
+                    android:clickable="true"
+                    android:contentDescription="Send"
+                    android:focusable="true"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_send_plane"
+                    app:tint="@color/login_btn_active_text" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

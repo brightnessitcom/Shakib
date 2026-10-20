@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="180dp"
+    android:height="120dp"
+    android:viewportWidth="180"
+    android:viewportHeight="120">
+
+    <!-- Subtle Absher geometric vertical bars pattern at top-left -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M10,0 V42 A3,3 0 0,0 13,45 H22 A3,3 0 0,0 25,42 V0 M10,58 V110 M25,58 V95 M36,0 V26 A3,3 0 0,0 39,29 H48 A3,3 0 0,0 51,26 V0 M36,42 V88 A3,3 0 0,1 39,91 H48 A3,3 0 0,1 51,88 V42 M62,0 V52 A3,3 0 0,0 65,55 H74 A3,3 0 0,0 77,52 V0 M62,68 V105 M88,0 V34 A3,3 0 0,0 91,37 H100 A3,3 0 0,0 103,34 V0 M88,50 V85 M114,0 V46 A3,3 0 0,0 117,49 H126 A3,3 0 0,0 129,46 V0 M140,0 V28 A3,3 0 0,0 143,31 H152 A3,3 0 0,0 155,28 V0"
+        android:strokeWidth="1.5"
+        android:strokeColor="#25FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+</vector>

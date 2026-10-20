@@ -1,0 +1,43 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Back Rounded Square with X (connected cleanly to front square edges) -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 19,19 L 19,10.5 A 4.5,4.5 0 0,1 23.5,6 L 37.5,6 A 4.5,4.5 0 0,1 42,10.5 L 42,24.5 A 4.5,4.5 0 0,1 37.5,29 L 29,29" />
+
+    <!-- X (cross) inside Back Square -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 25.2,12.2 L 35.8,22.8 M 35.8,12.2 L 27.6,20.4" />
+
+    <!-- Front Rounded Square -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 10.5,19 L 24.5,19 A 4.5,4.5 0 0,1 29,23.5 L 29,37.5 A 4.5,4.5 0 0,1 24.5,42 L 10.5,42 A 4.5,4.5 0 0,1 6,37.5 L 6,23.5 A 4.5,4.5 0 0,1 10.5,19 Z" />
+
+    <!-- Checkmark inside Front Square -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 11.5,31.2 L 15.5,35.2 L 23.5,27.2" />
+
+</vector>

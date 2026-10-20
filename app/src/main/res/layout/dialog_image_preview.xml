@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/previewContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333">
+
+    <com.sandwabe.tecnol.TouchImageView
+        android:id="@+id/previewImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:contentDescription="Profile Image Preview" />
+
+    <!-- Close button at top right -->
+    <ImageView
+        android:id="@+id/btnClose"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="4dp"
+        android:src="@drawable/scross"
+        app:tint="#FFFFFF"
+        android:elevation="10dp"
+        android:contentDescription="Close" />
+
+</FrameLayout>

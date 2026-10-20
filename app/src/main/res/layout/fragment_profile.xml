@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/app_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topBar"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:title="@string/profile_title_toolbar_title_placeholder"
+        android:elevation="8dp"
+        android:titleTextColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp">
+                <ImageView
+                    android:id="@+id/backarrowprofile"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                android:src="@drawable/arrow_l"
+                app:tint="@color/icon_tint_primary"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/settings"
+                android:layout_marginStart="6dp"/>
+            <TextView
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center_vertical"
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/my_profile_title"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/backarrowprofile"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:scrollbars="none"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/greenBg"
+                android:background="#006837"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mainCard"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="153dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@color/card_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:id="@+id/iqamaHolderName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Iqama Holder Name"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:id="@+id/iqamaNumberText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ID No. 0000000000"/>
+
+                        <ImageView
+                            android:id="@+id/copyimgiconresedent"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_cpy"
+                            app:tint="@color/icon_tint_primary"
+                            android:contentDescription="@string/profile_copy_icon_description"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/icon_tint_primary"
+                            android:gravity="center_vertical"
+                            android:id="@+id/detailsLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/my_personal_details_label"/>
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/big_arrow"
+                            app:tint="@color/icon_tint_primary"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/view_details_arrow"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/detailsLabel"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profileImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="100dp"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/profile_picture_description"
+                android:translationZ="12dp"
+                android:elevation="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedCornerImage"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/detailsLayout"
+                android:padding="12dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainCard">
+
+                <GridLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/gridLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:columnCount="2"
+                    android:useDefaultMargins="true">
+
+                    <include
+                        android:id="@+id/cardpassport_inv"
+                        android:layout_width="0dp"
+                        android:layout_height="125dp"
+                        android:layout_columnSpan="1"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        layout="@layout/card_item_passport"/>
+
+                    <include
+                        android:id="@+id/cardrrsident_inv"
+                        android:layout_width="0dp"
+                        android:layout_height="125dp"
+                        android:layout_columnSpan="1"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        layout="@layout/card_item_resident_id"/>
+
+                    <include
+                        android:id="@+id/card_item_visa_license"
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_columnSpan="2"
+                        android:layout_columnWeight="1"
+                        layout="@layout/card_item_visa_license"/>
+                </GridLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_travel_records"
+                    android:layout_width="match_parent"
+                    android:layout_height="145dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="false">
+
+                    <FrameLayout
+                        android:background="@drawable/g_bragoud"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="#161719"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/my_travel_records_title"/>
+
+                            <TextView
+                                android:textSize="13sp"
+                                android:textColor="#1E2420"
+                                android:layout_marginTop="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/find_your_last_trips_details"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvTravelStatusBadge"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:layout_gravity="end|top"
+                            android:background="@drawable/label_background"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/inside_kingdom_label"/>
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="14dp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:id="@+id/lebor_click_layout"
+                        android:padding="14dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:src="@drawable/ic_workerbig"
+                            app:tint="@color/icon_tint_primary"
+                            android:contentDescription="@string/labour_icon_description"/>
+
+                        <TextView
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/labour_importations_title"
+                            android:layout_marginStart="14dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

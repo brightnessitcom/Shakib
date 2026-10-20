@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_background"
+        android:paddingHorizontal="8dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/ivBack"
+            android:text="@string/manage_digital_identity"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- 2-Column Grid (Official Absher 2x2 layout, NO Bottom Nav) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_alignParentBottom="true"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2">
+
+            <!-- 1. Issue Digital Identity -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardIssueIdentity"
+                android:layout_width="0dp"
+                android:layout_height="138dp"
+                android:layout_margin="6dp"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_person_plus"
+                        app:tint="@color/prelogin_card_icon_tint"
+                        android:contentDescription="Issue Digital Identity" />
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:text="@string/manage_issue_digital_identity"
+                        android:textColor="@color/prelogin_card_title"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="2dp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 2. Change Mobile Number -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardChangeMobile"
+                android:layout_width="0dp"
+                android:layout_height="138dp"
+                android:layout_margin="6dp"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_phone_sync"
+                        app:tint="@color/prelogin_card_icon_tint"
+                        android:contentDescription="Change Mobile Number" />
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:text="@string/manage_change_mobile_number"
+                        android:textColor="@color/prelogin_card_title"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="2dp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 3. Activate Digital Identity -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardActivateIdentity"
+                android:layout_width="0dp"
+                android:layout_height="138dp"
+                android:layout_margin="6dp"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_person_check"
+                        app:tint="@color/prelogin_card_icon_tint"
+                        android:contentDescription="Activate Digital Identity" />
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:text="@string/manage_activate_digital_identity"
+                        android:textColor="@color/prelogin_card_title"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="2dp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 4. Pause Digital Identity -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPauseIdentity"
+                android:layout_width="0dp"
+                android:layout_height="138dp"
+                android:layout_margin="6dp"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_person_pause"
+                        app:tint="@color/prelogin_card_icon_tint"
+                        android:contentDescription="Pause Digital Identity" />
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:text="@string/manage_pause_digital_identity"
+                        android:textColor="@color/prelogin_card_title"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="2dp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </GridLayout>
+    </ScrollView>
+
+</RelativeLayout>

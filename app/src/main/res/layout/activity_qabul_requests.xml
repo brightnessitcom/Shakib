@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+
+    <!-- Top Bar: Back + Title + Info -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivBack"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:text="Qabul Requests"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivInfo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_info_circle"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Info"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <!-- Tabs Bar -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/app_background"
+        app:tabIndicatorColor="@color/icon_tint_primary"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorFullWidth="true"
+        app:tabSelectedTextColor="@color/icon_tint_primary"
+        app:tabTextColor="@color/text_secondary"
+        app:tabTextAppearance="@style/InboxTabText"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabRippleColor="@android:color/transparent">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pending" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accepted" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <!-- ViewPager2 fills remaining space above bottom nav -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bottom_nav_bg"
+        app:elevation="8dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
+        app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemRippleColor="@android:color/transparent" />
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <group
+        android:pivotX="27"
+        android:pivotY="24.5"
+        android:scaleX="1.6"
+        android:scaleY="1.6">
+
+        <!-- Top-right (front) license plate -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M20.5,14 H37.5 A2.5,2.5 0 0,1 40,16.5 V23.5 A2.5,2.5 0 0,1 37.5,26 H20.5 A2.5,2.5 0 0,1 18,23.5 V16.5 A2.5,2.5 0 0,1 20.5,14 Z"
+            android:strokeWidth="1.35"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Top-right plate vertical dividers -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M31,14 V26 M35.5,14 V26"
+            android:strokeWidth="1.35"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Bottom-left (back) license plate outer visible frame -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M18,23 H16 A2.5,2.5 0 0,0 13.5,25.5 V32.5 A2.5,2.5 0 0,0 16,35 H33 A2.5,2.5 0 0,0 35.5,32.5 V26"
+            android:strokeWidth="1.35"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Bottom-left plate vertical dividers -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M26.5,26 V35 M31,26 V35"
+            android:strokeWidth="1.35"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+    </group>
+
+</vector>

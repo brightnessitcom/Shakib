@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Image 2 vertical capsule/line pattern -->
+    <path
+        android:fillColor="#0A006644"
+        android:pathData="M10,5h4v20c0,2.2 -1.8,4 -4,4s-4,-1.8 -4,-4V5z M25,10h4v30c0,2.2 -1.8,4 -4,4s-4,-1.8 -4,-4V10z M40,5h4v50c0,2.2 -1.8,4 -4,4s-4,-1.8 -4,-4V5z M55,15h4v40c0,2.2 -1.8,4 -4,4s-4,-1.8 -4,-4V15z M70,5h4v25c0,2.2 -1.8,4 -4,4s-4,-1.8 -4,-4V5z M85,10h4v45c0,2.2 -1.8,4 -4,4s-4,-1.8 -4,-4V10z" />
+</vector>

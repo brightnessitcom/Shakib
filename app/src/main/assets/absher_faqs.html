@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>FAQs - Absher</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: #1F2937;
+      overflow-x: hidden;
+    }
+
+    /* Custom right scrollbar track to match screenshot */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F1F1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #888888;
+      border-radius: 3px;
+    }
+
+    /* 1. Official Saudi Government Top Banner */
+    .gov-banner {
+      background-color: #F3F4F6;
+      padding: 10px 16px 12px 24px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .gov-banner-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .saudi-flag {
+      width: 24px;
+      height: 16px;
+      background-color: #006C35;
+      border-radius: 2px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .gov-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1F2937;
+      letter-spacing: -0.1px;
+    }
+
+    .gov-verify {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+      margin-left: 34px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #15803D;
+      cursor: pointer;
+    }
+
+    .gov-verify svg {
+      width: 13px;
+      height: 13px;
+      stroke: #15803D;
+      transition: transform 0.2s ease;
+    }
+
+    .gov-verify-details {
+      display: none;
+      margin-top: 8px;
+      margin-left: 34px;
+      font-size: 12px;
+      color: #4B5563;
+      line-height: 1.5;
+    }
+
+    /* 2. Absher Main Header */
+    .absher-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 22px 14px 24px;
+      background-color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+      z-index: 2;
+    }
+
+    .absher-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .header-icon-btn {
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+      color: #1F2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 3. Main Content Area */
+    .main-container {
+      padding: 26px 16px 60px 14px;
+      position: relative;
+    }
+
+    /* Floating right edge dock tab seen in screenshot */
+    .floating-edge-tab {
+      position: absolute;
+      right: 0;
+      top: 30px;
+      width: 14px;
+      height: 36px;
+      background-color: #F3F4F6;
+      border: 1px solid #D1D5DB;
+      border-right: none;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .floating-edge-tab::after {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background-color: #374151;
+      border-radius: 50%;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .breadcrumb-icon {
+      display: inline-flex;
+      align-items: center;
+      color: #15803D;
+    }
+
+    .breadcrumb-home {
+      color: #374151;
+      font-weight: 400;
+    }
+
+    .breadcrumb-sep {
+      color: #9CA3AF;
+      font-size: 13px;
+    }
+
+    .breadcrumb-current {
+      color: #9CA3AF;
+      font-weight: 400;
+    }
+
+    /* Page Title */
+    .page-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: #262626;
+      margin-bottom: 18px;
+      letter-spacing: -0.3px;
+    }
+
+    .title-divider {
+      height: 1px;
+      background-color: #E5E7EB;
+      margin-bottom: 44px;
+    }
+
+    /* Search Input */
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      padding: 0 14px;
+      height: 48px;
+      background-color: #FFFFFF;
+      margin-bottom: 40px;
+    }
+
+    .search-box:focus-within {
+      border-color: #15803D;
+      box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.12);
+    }
+
+    .search-box svg {
+      width: 20px;
+      height: 20px;
+      stroke: #6B7280;
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 15px;
+      color: #1F2937;
+      background: transparent;
+    }
+
+    .search-box input::placeholder {
+      color: #9CA3AF;
+    }
+
+    /* Category Tabs */
+    .tabs-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      overflow-x: auto;
+      border-bottom: 1px solid #E5E7EB;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      scrollbar-width: none;
+    }
+
+    .tabs-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-item {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1F2937;
+      white-space: nowrap;
+      padding-bottom: 12px;
+      margin-bottom: -13px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab-item.active {
+      color: #1F2937;
+      border-bottom-color: #15803D;
+    }
+
+    /* FAQ List Items */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-card {
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 16px 14px;
+      background-color: #FFFFFF;
+      cursor: pointer;
+      transition: border-color 0.15s ease;
+    }
+
+    .faq-question {
+      font-size: 13.8px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.45;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #F3F4F6;
+      font-size: 13.5px;
+      color: #4B5563;
+      line-height: 1.6;
+    }
+
+    .faq-card.open .faq-answer {
+      display: block;
+    }
+
+    /* 4. Cookies Floating Modal Card (Matches Reference Screenshot 100%) */
+    .cookies-modal {
+      position: fixed;
+      left: 16px;
+      right: 21px;
+      bottom: 34px;
+      background-color: #FFFFFF;
+      border-radius: 6px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 22px 20px 26px 20px;
+      z-index: 100;
+      border: 1px solid #F3F4F6;
+    }
+
+    .cookies-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .cookies-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cookie-icon-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: #E8F5EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cookies-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .cookies-close {
+      background: none;
+      border: none;
+      padding: 6px;
+      cursor: pointer;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cookies-body {
+      font-size: 13.8px;
+      color: #374151;
+      line-height: 1.56;
+      margin-bottom: 20px;
+    }
+
+    .cookies-body a {
+      color: #15803D;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .btn-accept {
+      width: 100%;
+      height: 46px;
+      background-color: #1B7A43;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+
+    .btn-accept:active {
+      background-color: #145E33;
+    }
+
+    .btn-reject {
+      width: 100%;
+      height: 46px;
+      background-color: #FFFFFF;
+      color: #374151;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+
+    .btn-reject:active {
+      background-color: #F9FAFB;
+    }
+
+    .btn-customize {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: none;
+      border: none;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* DARK MODE SUPPORT */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #161719 !important;
+        color: #FFFFFF !important;
+      }
+      .gov-banner {
+        background-color: #1A1C1A !important;
+        border-bottom-color: #2D312E !important;
+      }
+      .gov-title {
+        color: #FFFFFF !important;
+      }
+      .gov-verify, .gov-verify svg {
+        color: #72D09D !important;
+        stroke: #72D09D !important;
+      }
+      .gov-verify-details {
+        color: #C4C7C5 !important;
+      }
+      .absher-header {
+        background-color: #161719 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+      }
+      .header-icon-btn {
+        color: #FFFFFF !important;
+      }
+      .floating-edge-tab {
+        background-color: #282B29 !important;
+        border-color: #383B39 !important;
+      }
+      .breadcrumb-home {
+        color: #FFFFFF !important;
+      }
+      .breadcrumb-icon {
+        color: #72D09D !important;
+      }
+      .page-title {
+        color: #FFFFFF !important;
+      }
+      .title-divider {
+        background-color: #383B39 !important;
+      }
+      .search-box {
+        background-color: #282B29 !important;
+        border-color: #383B39 !important;
+      }
+      .search-box input {
+        color: #FFFFFF !important;
+      }
+      .search-box input::placeholder {
+        color: #8E9296 !important;
+      }
+      .tabs-wrapper {
+        border-bottom-color: #383B39 !important;
+      }
+      .tab-item {
+        color: #C4C7C5 !important;
+      }
+      .tab-item.active {
+        color: #FFFFFF !important;
+        border-bottom-color: #72D09D !important;
+      }
+      .faq-card {
+        background-color: #282B29 !important;
+        border-color: #383B39 !important;
+      }
+      .faq-question {
+        color: #FFFFFF !important;
+      }
+      .faq-answer {
+        color: #C4C7C5 !important;
+        border-top-color: #383B39 !important;
+      }
+      .cookies-modal {
+        background-color: #282B29 !important;
+        border-color: #383B39 !important;
+        color: #FFFFFF !important;
+      }
+    }
+
+    body.dark-mode {
+      background-color: #161719 !important;
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .gov-banner {
+      background-color: #1A1C1A !important;
+      border-bottom-color: #2D312E !important;
+    }
+    body.dark-mode .gov-title {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .gov-verify, body.dark-mode .gov-verify svg {
+      color: #72D09D !important;
+      stroke: #72D09D !important;
+    }
+    body.dark-mode .gov-verify-details {
+      color: #C4C7C5 !important;
+    }
+    body.dark-mode .absher-header {
+      background-color: #161719 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    }
+    body.dark-mode .header-icon-btn {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .floating-edge-tab {
+      background-color: #282B29 !important;
+      border-color: #383B39 !important;
+    }
+    body.dark-mode .breadcrumb-home {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .breadcrumb-icon {
+      color: #72D09D !important;
+    }
+    body.dark-mode .page-title {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .title-divider {
+      background-color: #383B39 !important;
+    }
+    body.dark-mode .search-box {
+      background-color: #282B29 !important;
+      border-color: #383B39 !important;
+    }
+    body.dark-mode .search-box input {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .search-box input::placeholder {
+      color: #8E9296 !important;
+    }
+    body.dark-mode .tabs-wrapper {
+      border-bottom-color: #383B39 !important;
+    }
+    body.dark-mode .tab-item {
+      color: #C4C7C5 !important;
+    }
+    body.dark-mode .tab-item.active {
+      color: #FFFFFF !important;
+      border-bottom-color: #72D09D !important;
+    }
+    body.dark-mode .faq-card {
+      background-color: #282B29 !important;
+      border-color: #383B39 !important;
+    }
+    body.dark-mode .faq-question {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .faq-answer {
+      color: #C4C7C5 !important;
+      border-top-color: #383B39 !important;
+    }
+    body.dark-mode .cookies-modal {
+      background-color: #282B29 !important;
+      border-color: #383B39 !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+  <script>
+    if (window.location.search.includes('theme=dark') || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark-mode');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('dark-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- 1. Official Saudi Government Top Banner -->
+  <div class="gov-banner">
+    <div class="gov-banner-row">
+      <div class="saudi-flag" aria-hidden="true">
+        <svg width="18" height="11" viewBox="0 0 18 11" fill="none">
+          <rect x="2" y="2" width="14" height="1.5" rx="0.75" fill="white"/>
+          <rect x="3" y="4.5" width="12" height="1.2" rx="0.6" fill="white"/>
+          <rect x="5" y="7.5" width="8" height="1.3" rx="0.65" fill="white"/>
+        </svg>
+      </div>
+      <span class="gov-title">An official website of the Kingdom of Saudi Arabia</span>
+    </div>
+    <div class="gov-verify" onclick="toggleVerify()">
+      <span>How to verify?</span>
+      <svg id="verifyChevron" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+    <div id="verifyDetails" class="gov-verify-details">
+      Official websites use <strong>.gov.sa</strong> or <strong>absher.sa</strong> domains and encrypted HTTPS connections.
+    </div>
+  </div>
+
+  <!-- 2. Absher Header -->
+  <div class="absher-header">
+    <!-- Absher Vertical Bars Logo -->
+    <div class="absher-logo">
+      <svg width="46" height="50" viewBox="0 0 46 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 5 vertical barcode-style pillars matching Absher identity -->
+        <rect x="4" y="16" width="3.5" height="28" rx="1.75" fill="#006C35"/>
+        <circle cx="9.8" cy="18" r="1.7" fill="#006C35"/>
+        <rect x="8.1" y="22" width="3.4" height="19" rx="1.7" fill="#006C35"/>
+        <rect x="13" y="11" width="3.5" height="30" rx="1.75" fill="#006C35"/>
+        <circle cx="18.8" cy="14" r="1.7" fill="#006C35"/>
+        <rect x="17.1" y="18" width="3.4" height="21" rx="1.7" fill="#006C35"/>
+        <rect x="22" y="11" width="3.5" height="28" rx="1.75" fill="#006C35"/>
+        <circle cx="27.8" cy="14" r="1.7" fill="#006C35"/>
+        <rect x="26.1" y="18" width="3.4" height="21" rx="1.7" fill="#006C35"/>
+        <circle cx="32.5" cy="9" r="1.8" fill="#006C35"/>
+        <rect x="30.8" y="13" width="3.5" height="28" rx="1.75" fill="#006C35"/>
+        <circle cx="32.5" cy="44.5" r="1.8" fill="#006C35"/>
+      </svg>
+    </div>
+
+    <div class="header-actions">
+      <!-- Search Icon -->
+      <button class="header-icon-btn" onclick="document.getElementById('faqSearchInput').focus()" aria-label="Search">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+
+      <!-- Language Translation Icon -->
+      <button class="header-icon-btn" aria-label="Language">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="7" width="11" height="13" rx="2"></rect>
+          <path d="M10 4h8a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-4"></path>
+          <path d="M6.5 15.5L8.5 10.5L10.5 15.5"></path>
+          <line x1="7" y1="14" x2="10" y2="14"></line>
+          <path d="M14 9h3"></path>
+          <path d="M15.5 8v1"></path>
+          <path d="M14.5 12c1 0 2-.8 2-2"></path>
+        </svg>
+      </button>
+
+      <!-- Hamburger Menu Icon -->
+      <button class="header-icon-btn" aria-label="Menu">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.8" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. Main Content -->
+  <div class="main-container">
+    <div class="floating-edge-tab"></div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <span class="breadcrumb-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="15" y2="6"></line>
+          <line x1="3" y1="12" x2="11" y2="12"></line>
+          <line x1="3" y1="18" x2="15" y2="18"></line>
+          <polyline points="19 9 15 12 19 15"></polyline>
+        </svg>
+      </span>
+      <span class="breadcrumb-home">Home</span>
+      <span class="breadcrumb-sep">&#8250;</span>
+      <span class="breadcrumb-current">FAQs</span>
+    </div>
+
+    <h1 class="page-title">FAQs</h1>
+    <div class="title-divider"></div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        id="faqSearchInput"
+        type="text"
+        placeholder="Search in FAQ..."
+        oninput="filterFaqs()"
+      />
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="tabs-wrapper">
+      <div class="tab-item active" onclick="selectTab(this, 'all')">Passports</div>
+      <div class="tab-item" onclick="selectTab(this, 'civil')">Civil Affairs</div>
+      <div class="tab-item" onclick="selectTab(this, 'traffic')">Traffic</div>
+      <div class="tab-item" onclick="selectTab(this, 'general')">General</div>
+      <div class="tab-item" onclick="selectTab(this, 'security')">Public Security</div>
+    </div>
+
+    <!-- FAQ Accordion Cards -->
+    <div id="faqList" class="faq-list">
+      <div class="faq-card" data-category="all" onclick="this.classList.toggle('open')">
+        <div class="faq-question">
+          <span>Actual beneficiary means that the user is acting on their own behalf or on behalf of a direct family member registered in Absher.</span>
+        </div>
+        <div class="faq-answer">
+          You can manage all passport and resident ID services directly from the My Services tab in your Absher account.
+        </div>
+      </div>
+
+      <div class="faq-card" data-category="all" onclick="this.classList.toggle('open')">
+        <div class="faq-question">
+          <span>Does the Saudi passport renewal service include family members and dependents registered in Absher?</span>
+        </div>
+        <div class="faq-answer">
+          Yes, you can renew passports for all eligible family members directly through Absher Individuals.
+        </div>
+      </div>
+
+      <div class="faq-card" data-category="all" onclick="this.classList.toggle('open')">
+        <div class="faq-question">
+          <span>I have renewed my passport through the Absher platform, how can I get the new passport after completing the procedure?</span>
+        </div>
+        <div class="faq-answer">
+          Your new passport will be delivered via Saudi Post (SPL) after presenting the previous passport for verification.
+        </div>
+      </div>
+
+      <div class="faq-card" data-category="all" onclick="this.classList.toggle('open')">
+        <div class="faq-question">
+          <span>How can I verify my Digital Resident ID or Passport offline without internet connection?</span>
+        </div>
+        <div class="faq-answer">
+          Open the Absher app and view your Digital ID or Passport from the home dashboard. Your QR code can be scanned by authorized officers.
+        </div>
+      </div>
+
+      <div class="faq-card" data-category="all" onclick="this.classList.toggle('open')">
+        <div class="faq-question">
+          <span>How is a passport delivered after renewal through the Absher platform?</span>
+        </div>
+        <div class="faq-answer">
+          After completing the renewal request on Absher, the renewed passport is delivered via Saudi Post (SPL) to your registered National Address.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Cookies Popup Card (Shown by default matching screenshot) -->
+  <div id="cookiesModal" class="cookies-modal">
+    <div class="cookies-header">
+      <div class="cookies-title-group">
+        <div class="cookie-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+            <path d="M8.5 8.5v.01"></path>
+            <path d="M16 15.5v.01"></path>
+            <path d="M12 12v.01"></path>
+            <path d="M11 17v.01"></path>
+            <path d="M7 14v.01"></path>
+          </svg>
+        </div>
+        <span class="cookies-title">Cookies</span>
+      </div>
+      <button class="cookies-close" onclick="closeCookies()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <p class="cookies-body">
+      This website may use cookies for functional purposes, such as providing an improved user experience and understanding user preferences. By continuing to use this website, you consent to the use of cookies as described in our <a href="javascript:void(0)">Privacy Policy.</a> Users have the option to refuse the use of cookies by adjusting their browser settings.
+    </p>
+
+    <button class="btn-accept" onclick="closeCookies()">Accept</button>
+    <button class="btn-reject" onclick="closeCookies()">Reject</button>
+    <button class="btn-customize" onclick="closeCookies()">Customize the Options</button>
+  </div>
+
+  <script>
+    function closeCookies() {
+      var modal = document.getElementById('cookiesModal');
+      if (modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    function toggleVerify() {
+      var details = document.getElementById('verifyDetails');
+      var chevron = document.getElementById('verifyChevron');
+      if (details.style.display === 'block') {
+        details.style.display = 'none';
+        chevron.style.transform = 'rotate(0deg)';
+      } else {
+        details.style.display = 'block';
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    function selectTab(tabEl, category) {
+      var tabs = document.querySelectorAll('.tab-item');
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+      tabEl.classList.add('active');
+      filterFaqs();
+    }
+
+    function filterFaqs() {
+      var q = (document.getElementById('faqSearchInput').value || '').toLowerCase();
+      var cards = document.querySelectorAll('.faq-card');
+      for (var i = 0; i < cards.length; i++) {
+        var text = cards[i].innerText.toLowerCase();
+        cards[i].style.display = text.indexOf(q) !== -1 ? 'block' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>

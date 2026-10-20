@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/prelogin_settings_bg"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar: only contains Done button on the right, NO bottom divider -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:text="@string/prelogin_settings_done"
+            android:textColor="@color/login_btn_active_bg"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Content Area: no divider under top bar -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:fillViewport="true"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- PREFERENCES Section Header -->
+            <TextView
+                android:id="@+id/tvPreferencesHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/prelogin_preferences_header"
+                android:textColor="@color/prelogin_settings_pref_title"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- Language Card: solid rounded rectangle, NO outer stroke -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/prelogin_settings_card_bg"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Language Title -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/prelogin_settings_language"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Single Divider under Language header -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/prelogin_settings_divider" />
+
+                    <RadioGroup
+                        android:id="@+id/languageRadioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="4dp">
+
+                        <!-- Arabic Option (NO divider between options) -->
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radio_arabic"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:button="@null"
+                            android:drawableEnd="@drawable/settings_radio_selector"
+                            android:gravity="start|center_vertical"
+                            android:textAlignment="viewStart"
+                            android:paddingHorizontal="16dp"
+                            android:text="@string/lang_arabic"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15.5sp"
+                            app:buttonCompat="@null"
+                            app:useMaterialThemeColors="false" />
+
+                        <!-- English Option (NO divider between options) -->
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radio_english"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:button="@null"
+                            android:drawableEnd="@drawable/settings_radio_selector"
+                            android:gravity="start|center_vertical"
+                            android:textAlignment="viewStart"
+                            android:paddingHorizontal="16dp"
+                            android:text="@string/lang_english"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15.5sp"
+                            app:buttonCompat="@null"
+                            app:useMaterialThemeColors="false" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

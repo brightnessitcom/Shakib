@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Semantic Theme Colors (Dark Mode) -->
+  <color name="app_background">#1A1A1A</color>
+  <color name="surface_background">#1A1A1A</color>
+  <color name="card_background">#303435</color>
+  <color name="settings_card_bg">#303435</color>
+  <color name="text_primary">#FFFFFF</color>
+  <color name="text_secondary">#B0B5B3</color>
+  <color name="search_bg">#282A2C</color>
+  <color name="search_hint">#8A9095</color>
+  <color name="vehicle_services_bg">#1A1A1A</color>
+  <color name="vehicle_card_bg">#303435</color>
+  <color name="vehicle_card_title">#FFFFFF</color>
+  <color name="vehicle_card_desc">#9CA2A7</color>
+  <color name="icon_tint_primary">#72D09D</color>
+  <color name="icon_tint_secondary">#FFFFFF</color>
+  <color name="divider_color">#4A4E4C</color>
+  <color name="section_header_text">#C4C7C5</color>
+  <color name="bottom_nav_bg">#191B1D</color>
+  <color name="absher_header_pattern">#A3DBC0</color>
+  <color name="absher_header_pattern_end">#0000663D</color>
+
+  <!-- PreLogin Semantic Colors (Dark Mode) -->
+  <color name="prelogin_bg">#1A1A1A</color>
+  <color name="prelogin_header_bg">#00663D</color>
+  <color name="prelogin_header_title">#FFFFFF</color>
+  <color name="prelogin_logo_tint">#FFFFFF</color>
+  <color name="prelogin_header_action_tint">#A0D8B6</color>
+  <color name="prelogin_btn_login_bg">#99E2BC</color>
+  <color name="prelogin_btn_login_text">#082A18</color>
+  <color name="prelogin_btn_login_icon_tint">#00663D</color>
+  <color name="prelogin_btn_nafath_bg">#1E2022</color>
+  <color name="prelogin_btn_nafath_stroke">#2B2F33</color>
+  <color name="prelogin_btn_nafath_text">#FFFFFF</color>
+  <color name="prelogin_section_title">#FFFFFF</color>
+  <color name="prelogin_see_all">#8BCBA8</color>
+  <color name="prelogin_card_bg">#26292B</color>
+  <color name="prelogin_card_stroke">#26292B</color>
+  <color name="prelogin_card_icon_tint">#86D2A9</color>
+  <color name="prelogin_card_title">#FFFFFF</color>
+  <color name="prelogin_footer_text">#9E9E9E</color>
+
+  <!-- Login Screen Semantic Colors (Dark Mode) -->
+  <color name="login_bg">#1A1A1A</color>
+  <color name="login_back_tint">#72D09D</color>
+  <color name="login_logo_tint">#FFFFFF</color>
+  <color name="login_title">#FFFFFF</color>
+  <color name="login_input_bg">#212325</color>
+  <color name="login_input_stroke">#383D42</color>
+  <color name="login_input_stroke_focused">#72D09D</color>
+  <color name="login_label">#8E9296</color>
+  <color name="login_input_text">#FFFFFF</color>
+  <color name="login_input_hint">#5E656B</color>
+  <color name="login_btn_active_bg">#72D09D</color>
+  <color name="login_btn_active_text">#082A18</color>
+  <color name="login_btn_disabled_bg">#42574C</color>
+  <color name="login_btn_disabled_text">#23382D</color>
+  <color name="login_forgot_password">#72D09D</color>
+  <color name="login_checkbox_tint">#72D09D</color>
+  <color name="login_info_icon_bg">#3D80CE</color>
+  <color name="login_info_icon_glyph">#FFFFFF</color>
+
+  <!-- PreLogin Settings Colors (Dark Mode) -->
+  <color name="prelogin_settings_bg">#1A1A1A</color>
+  <color name="prelogin_settings_pref_title">#9B9EA1</color>
+  <color name="prelogin_settings_card_bg">#313435</color>
+  <color name="prelogin_settings_divider">#61686B</color>
+
+  <!-- Verify Details Semantic Colors (Dark Mode) -->
+  <color name="captcha_container_bg">#26292E</color>
+  <color name="captcha_box_bg">#1E2023</color>
+  <color name="captcha_box_stroke">#383D42</color>
+  <color name="notice_blue_accent">#6DA5EE</color>
+
+  <!-- Dashboard & Home Semantic Colors (Dark Mode) -->
+  <color name="dashboard_header_bg">#00663E</color>
+  <color name="dashboard_header_logo_tint">#FFFFFF</color>
+  <color name="dashboard_header_action_tint">#FFFFFF</color>
+
+  <color name="survey_card_bg">#004D31</color>
+  <color name="survey_card_title">#FFFFFF</color>
+  <color name="survey_card_body">#A4D2B8</color>
+  <color name="survey_card_action">#72D09D</color>
+  <color name="survey_badge_bg">#80D6AA</color>
+  <color name="survey_badge_fg">#004D31</color>
+
+  <color name="doc_error_container_bg">#282C30</color>
+  <color name="doc_error_text">#FFFFFF</color>
+
+  <color name="quick_access_bg">#00663E</color>
+  <color name="quick_access_pattern_tint">#FFFFFF</color>
+  <color name="quick_access_title_color">#FFFFFF</color>
+
+  <color name="fab_assistant_bg">#A2DABE</color>
+  <color name="fab_assistant_tint">#082A18</color>
+  <color name="nav_item_inactive">#8E9296</color>
+  <color name="preferred_services_bg">#006034</color>
+
+  <!-- Service Action Buttons & Empty States (Dark Mode) -->
+  <color name="btn_service_action_bg">#A2DABE</color>
+  <color name="btn_service_action_text">#082A18</color>
+  <color name="btn_service_action_disabled_bg">#435249</color>
+  <color name="btn_service_action_disabled_text">#203328</color>
+  <color name="empty_state_icon_tint">#E0E3E6</color>
+  <color name="search_result_divider">#36383A</color>
+  <color name="banner_dismiss_circle_bg">#494E50</color>
+  <color name="banner_dismiss_cross_tint">#D2D6DA</color>
+  <color name="service_badge_bg">#35393D</color>
+  <color name="service_badge_icon_tint">#ADB4BB</color>
+  <color name="banner_accent_strip_color">#91B9E8</color>
+  <color name="banner_info_outer_bg">#1B487E</color>
+  <color name="banner_info_inner_bg">#91B9E8</color>
+  <color name="banner_info_glyph_color">#1B487E</color>
+  <color name="banner_card_bg">#313435</color>
+
+  <!-- Inbox & Notification Screen Colors (Dark Mode) -->
+  <color name="inbox_background">#1A1A1A</color>
+  <color name="inbox_top_icon_tint">#A3DBC0</color>
+  <color name="inbox_tab_indicator">#A3DBC0</color>
+  <color name="inbox_tab_selected_text">#A3DBC0</color>
+  <color name="inbox_tab_unselected_text">#D2D6DA</color>
+  <color name="inbox_tab_divider">#2C2F30</color>
+  <color name="inbox_empty_icon_tint">#D2D6DA</color>
+  <color name="inbox_empty_title_color">#FFFFFF</color>
+  <color name="inbox_empty_subtitle_color">#A0A5A8</color>
+
+  <!-- Nafath Flow Colors (Dark Mode) -->
+  <color name="colorNafathPrimary">#2CD5C4</color>
+  <color name="colorNafathAccent">#2CD5C4</color>
+  <color name="colorNafathBg">#1A1A1A</color>
+  <color name="colorNafathCardBg">#26292B</color>
+  <color name="colorNafathCardStroke">#374151</color>
+  <color name="colorNafathTextPrimary">#FFFFFF</color>
+  <color name="colorNafathTextSecondary">#9CA3AF</color>
+  <color name="colorNafathTopCardBg">#26292B</color>
+  <color name="colorNafathTimerPillBg">#111827</color>
+  <color name="colorNafathTimerPillText">#2CD5C4</color>
+  <color name="colorNafathInputBg">#212325</color>
+  <color name="colorNafathInputBorder">#4B5563</color>
+  <color name="colorNafathBtnBg">#006758</color>
+  <color name="colorNafathBtnText">#FFFFFF</color>
+  <color name="colorNafathDialogBg">#26292B</color>
+  <!-- Announcements Screen Colors (Dark Mode) -->
+  <color name="announcement_bg">#161719</color>
+  <color name="announcement_top_icon_tint">#72D09D</color>
+  <color name="announcement_title_text">#FFFFFF</color>
+  <color name="announcement_card_bg">#232527</color>
+  <color name="announcement_card_stroke">#232527</color>
+  <color name="announcement_unread_dot">#72D09D</color>
+  <color name="announcement_item_title">#FFFFFF</color>
+  <color name="announcement_item_text_secondary">#8E9296</color>
+  <color name="announcement_divider">#2E3236</color>
+  <color name="announcement_empty_icon_tint">#D2D6DA</color>
+  <color name="announcement_empty_title">#FFFFFF</color>
+  <color name="announcement_empty_subtitle">#A0A5A8</color>
+  <color name="announcement_loading_text">#FFFFFF</color>
+  <color name="announcement_detail_body">#D8DCDE</color>
+  <color name="announcement_detail_link">#72D09D</color>
+</resources>

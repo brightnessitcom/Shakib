@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:orientation="vertical"
+    android:background="@color/app_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:background="@color/app_background"
+        app:contentInsetStartWithNavigation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp">
+
+            <ImageView
+                android:id="@+id/backarrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_l"
+                app:tint="@color/icon_tint_primary"
+                android:contentDescription="Back"/>
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/backarrow"
+                android:layout_marginStart="20dp"
+                android:text="@string/my_personal_details_label"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:padding="13dp"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/card_personal"
+                layout="@layout/cradcard_item_personal"/>
+
+            <include
+                android:id="@+id/card_sponsor"
+                layout="@layout/card_item_sponsor"/>
+
+            <include
+                android:id="@+id/card_health"
+                layout="@layout/card_item_health"/>
+
+            <include
+                android:id="@+id/card_hajj"
+                layout="@layout/card_item_hajj"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

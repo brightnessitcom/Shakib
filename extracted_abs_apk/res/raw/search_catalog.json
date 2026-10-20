@@ -1,0 +1,657 @@
+[
+{
+"t": "Update Residence Passport Information",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Saudi Passport Renewal For Family Member",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Query Border Number",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Query Hajj Eligibility",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Request Replacement For Damaged Id",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "E-Authorization",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Register Newborn Service",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Exit/Re-Entry Visa Status",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Driving License Information",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Vehicle Ownership Transfer",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Issue Vehicle Repair Permit",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Cancellation Of Final Exit Visa",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Issuance Of Final Exit Visa",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Accident Objection/Waiver",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Parents' Requirements Regarding Obtaining Their Consent",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Renew Driving License",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "View Death Certificate",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Renewing The Saudi Passport",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Display Employees",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Taqdeer For Others",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Taqdeer For Myself",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Bayanati Plus",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Renew Residence Permit",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Booking An Appointment",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Cancellation Of Exit/Reentry Visa",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Query Nin Expiry",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Request Replacement For Lost Id",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "View Digital Id",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Request Replacement For Lost Family Register",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Issuing The Saudi Passport",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Renew Vehicle Registration",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Renew Air Gun License",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Government Payment",
+"s": "General Services",
+"p": false
+},
+{
+"t": "Update Family Register",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Report Minor Accident",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "View Vehicle Registration",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "View Digital Family Register",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Issuance Of Exit/Re-Entry Visa",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Vehicle Authorization",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Query Death Certificate",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "View Driving License",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Family Register For Mothers",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Travel Permits For Family Members",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Air Guns",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Dispute Traffic Violations",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Objection Traffic Violations",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Request Replacement For Damaged Family Register",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Digital Visitor Card",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Extension Of Visit Visa",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Book An Appointment",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "National Id Renewal Service",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Issue Death Certificate",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Martyrs Of Duty",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Issuance Residence Permit",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Query Iqama Expiry Service",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Issuing Family Register For Fathers",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Saudi Passport Issuance For Family Member",
+"s": "Passports",
+"p": false
+},
+{
+"t": "View Birth Certificate",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Public Query Of Worker Arrivals",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Family Visa Service",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Validate Citizen Data Document",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Report Los/Stolen Plates",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Driving License Info Report",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Public Query Health Insurance Validity (For Residents)",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Tawasul",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Muqeem Print",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Transfer Vehicle Ownership To An Institution",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Visitor Report",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Weapons And Explosive Appointments",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Vehicle Scrap",
+"s": "Public Security",
+"p": false
+},
+{
+"t": "Individual Plate Auction (Plates Market)",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Air Gun Ownership Transfer",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Update Resident Passport Information",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Report missing hajj",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "E-Bail For Police",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Request Replacement For Damaged Birth Certificate",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Report Misunderstanding",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Visa Request (Residents)",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Firearm Weapons",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Change Translated Name",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Vehicle Plate Replacement",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "National Address Service",
+"s": "General Services",
+"p": true
+},
+{
+"t": "Report The Loss Of The Saudi Passport To Family Members",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Authorization To Receive Female Workers Arriving For Work",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Issuing Final Exit Visa During Probationary Period",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Tahseen",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Query Travel Log Information",
+"s": "Passports",
+"p": false
+},
+{
+"t": "Query Resident Report",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Labour Importation Information",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Report Small Fights",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Query New Arrived Labors And Visitors",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Report The Loss Of The Saudi Passport",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Virtual Office",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Renew Weapon License",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Requesting Permit To Enter Makkah During Hajj Season For Domestic Workers",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Tawasul (Civil Affairs)",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Issue A National Id For A Family Member",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Add Resident Dependent",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Report Verbal Abuse.",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "View Digital Passport",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Passport Information",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Inquiry Traffic Violation For Visitors",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Public Query Finger Print Enrollment",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Scrap",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Report Stolen Car",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Verify Birth Certificate",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Accident Report",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Cancellation Of Exit/Reentry Or Final Exit Visa",
+"s": "Passports",
+"p": true
+},
+{
+"t": "E-Bail For Traffic",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Extend Exit Re-Entry Visa For Sponsorees Outside Kingdom",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Vehicle Ownership Transfer Between Family Members",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Drop Worker Exit And Not Returned",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Verifiy Criminal Record Certificate",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Report Finaincal Fraud",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Traffic Appointment",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Update Educational Qualification",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Byanati",
+"s": "Civil Affairs",
+"p": false
+},
+{
+"t": "Inquiry Traffic Violation",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Resident Personal Information",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Custom Cards",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Print Vehicle Registration",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Extend Traffic Violations",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Visitor Forget Username",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Issue\\View Permit To Carry Weapon",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Weapon Ownership Transfer",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Report Missing Death Certificate",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Criminal Record Certificate",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Vehicle Plate Exchange",
+"s": "Public Security",
+"p": true
+},
+{
+"t": "Request Replacement For Lost Birth Certificate",
+"s": "Civil Affairs",
+"p": true
+},
+{
+"t": "Id Card Delivery Request",
+"s": "Passports",
+"p": true
+},
+{
+"t": "Online Plate Auction",
+"s": "Public Security",
+"p": true
+}
+]

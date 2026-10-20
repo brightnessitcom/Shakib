@@ -1,0 +1,60 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <group
+        android:pivotX="23.35"
+        android:pivotY="24.7"
+        android:scaleX="1.45"
+        android:scaleY="1.45">
+
+        <!-- Car body outline (left side, roof, right A-pillar) -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M32.4,19.2 L29.4,13.6 A2.8,2.8 0 0,0 26.8,12 H17.2 A2.8,2.8 0 0,0 14.6,13.6 L11.8,19.5 L9.5,23 V32 H22.8"
+            android:strokeWidth="1.4"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Car hood line, left tire, and right tire -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M11.8,19.5 H24.5 M9.5,32 V36.2 A1.2,1.2 0 0,0 10.7,37.4 H12.3 A1.2,1.2 0 0,0 13.5,36.2 V32 M31.2,34.4 V36.2 A1.2,1.2 0 0,0 32.4,37.4 H34 A1.2,1.2 0 0,0 35.2,36.2 V31"
+            android:strokeWidth="1.4"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Car left circular headlight -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M15.4,23.3 A2.2,2.2 0 1,1 15.4,27.7 A2.2,2.2 0 1,1 15.4,23.3 Z"
+            android:strokeWidth="1.4"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Large circle on bottom-right -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M29,18.3 A8.2,8.2 0 1,1 29,34.7 A8.2,8.2 0 1,1 29,18.3 Z"
+            android:strokeWidth="1.4"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+        <!-- Right-pointing arrow inside circle -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M25,26.5 H33 M29.8,23.2 L33.2,26.5 L29.8,29.8"
+            android:strokeWidth="1.4"
+            android:strokeColor="#72D09D"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+
+    </group>
+
+</vector>

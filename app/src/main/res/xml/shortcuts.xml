@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="digital_documents"
+        android:enabled="true"
+        android:icon="@drawable/ic_public_qr_scanner"
+        android:shortcutShortLabel="@string/shortcut_digital_documents"
+        android:shortcutLongLabel="@string/shortcut_digital_documents">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="tech.error"
+            android:targetClass="com.sandwabe.tecnol.DigitalDocumentsActivity" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="absher_authenticator"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_lock"
+        android:shortcutShortLabel="@string/shortcut_absher_authenticator"
+        android:shortcutLongLabel="@string/shortcut_absher_authenticator">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="tech.error"
+            android:targetClass="com.sandwabe.tecnol.AbsherAuthenticatorActivity" />
+    </shortcut>
+</shortcuts>

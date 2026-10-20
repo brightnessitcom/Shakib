@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+      <item name="colorPrimary">@color/purple_500</item>
+      <item name="colorPrimaryVariant">@color/purple_700</item>
+      <item name="colorOnPrimary">@color/white</item>
+      <item name="colorSecondary">@color/teal_200</item>
+      <item name="colorSecondaryVariant">@color/teal_700</item>
+      <item name="colorOnSecondary">@color/black</item>
+      <item name="android:windowBackground">@color/app_background</item>
+      <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+  </style>
+
+  <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <item name="android:windowBackground">@color/app_background</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
+  <style name="AppTheme.Biometric" parent="AppTheme">
+    <item name="android:windowBackground">@color/app_background</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
+  <style name="AppTheme.DarkStatusBar" parent="AppTheme">
+    <item name="android:statusBarColor">@android:color/black</item>
+    <item name="android:navigationBarColor">@android:color/black</item>
+    <item name="android:windowLightStatusBar">false</item>
+    <item name="android:windowLightNavigationBar">false</item>
+  </style>
+
+  <style name="BottomNavTextAppearance" parent="TextAppearance.AppCompat.Caption">
+    <item name="android:textSize">10sp</item>
+    <item name="android:textStyle">normal</item>
+  </style>
+
+  <style name="PreferenceSummaryTextStyle" parent="">
+    <item name="android:textAppearance">?android:attr/textAppearanceListItemSecondary</item>
+  </style>
+
+  <style name="RoundedCornerImage">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">5dp</item>
+  </style>
+
+  <style name="CircleImage">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">50%</item>
+  </style>
+
+  <style name="Theme.Hidden" parent="@android:style/Theme.DeviceDefault">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:colorBackgroundCacheHint">@null</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+  </style>
+
+    <style name="SettingsSupportItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">18dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">15.5sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="SettingsDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/divider_color</item>
+    </style>
+
+    <style name="InboxTabText" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

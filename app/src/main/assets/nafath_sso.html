@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>National Single Sign-On - Nafath</title>
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-color: #111827;
+            --text-muted: #6B7280;
+            --primary: #006758;
+            --btn-bg: #085E52;
+            --input-border: #D1D5DB;
+            --input-bg: #FFFFFF;
+            --card-border: #E5E7EB;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1A1A1A;
+                --text-color: #FFFFFF;
+                --text-muted: #9CA3AF;
+                --primary: #2CD5C4;
+                --btn-bg: #006758;
+                --input-border: #4B5563;
+                --input-bg: #212325;
+                --card-border: #374151;
+            }
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 16px 22px 32px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .logo-nafath {
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -1px;
+            direction: rtl;
+        }
+        .menu-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .menu-btn span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--text-color);
+            border-radius: 2px;
+        }
+        .sso-title {
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .sso-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 16px;
+        }
+        .input-field {
+            width: 100%;
+            height: 52px;
+            border: 1.5dp solid var(--input-border);
+            border: 1px solid var(--input-border);
+            background-color: var(--input-bg);
+            border-radius: 8px;
+            padding: 0 16px;
+            font-size: 15px;
+            color: var(--text-color);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-field:focus {
+            border-color: var(--primary);
+        }
+        .input-field::placeholder {
+            color: #9CA3AF;
+        }
+        .btn-login {
+            width: 100%;
+            height: 50px;
+            background-color: var(--btn-bg);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .btn-login:active {
+            opacity: 0.9;
+            transform: scale(0.99);
+        }
+        .login-icon {
+            font-size: 18px;
+        }
+        .download-section {
+            margin-top: auto;
+            padding-top: 36px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+        .download-title {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+        .store-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .store-badges img {
+            max-width: 96%;
+            height: auto;
+            max-height: 40px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo-nafath">نفاذ</div>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="sso-title">National Single Sign-On</div>
+    <div class="sso-subtitle">National ID / Iqama Number</div>
+
+    <div class="input-group">
+        <input type="number" class="input-field" placeholder="Enter your National Id here" maxlength="10" inputmode="numeric" />
+    </div>
+
+    <button class="btn-login" type="button">
+        <span class="login-icon">&#8677;</span>
+        <span>Login</span>
+    </button>
+
+    <div class="download-section">
+        <div class="download-title">To download nafath app</div>
+        <div class="store-badges">
+            <img src="img_nafath_store_badges.png" alt="Download on App Store, Google Play, AppGallery" />
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="26dp"
+    android:height="26dp"
+    android:viewportWidth="26"
+    android:viewportHeight="26">
+    <!-- Red circle -->
+    <path
+        android:fillColor="#C62828"
+        android:pathData="M13,0 C20.18,0 26,5.82 26,13 C26,20.18 20.18,26 13,26 C5.82,26 0,20.18 0,13 C0,5.82 5.82,0 13,0 Z" />
+    <!-- White X -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17.5,9.61 L16.39,8.5 L13,11.89 L9.61,8.5 L8.5,9.61 L11.89,13 L8.5,16.39 L9.61,17.5 L13,14.11 L16.39,17.5 L17.5,16.39 L14.11,13 Z" />
+</vector>

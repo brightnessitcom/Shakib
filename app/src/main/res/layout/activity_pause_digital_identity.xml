@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_background"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Close" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/ivClose"
+            android:text="Pause Digital Identity"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Action Button (ZERO Bottom Nav) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:backgroundTint="@color/login_btn_active_bg"
+        app:cornerRadius="26dp"
+        app:elevation="0dp"
+        android:text="Continue"
+        android:textColor="@color/login_btn_active_text"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <!-- Scrollable Form Body -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/btnContinue"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="24dp">
+
+            <!-- Step Pill: STEP 1/2 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_step_pill"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STEP 1/2"
+                    android:textColor="#D5DDD8"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Dot 1 (Active) -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_circle_badge"
+                    android:backgroundTint="#72D09D" />
+
+                <!-- Dot 2 -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/bg_circle_badge"
+                    android:backgroundTint="#555A60" />
+            </LinearLayout>
+
+            <!-- Section Heading: Add ID Number -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Add ID Number"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Service Info Banner -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/search_bg"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Read more information about the service here"
+                        android:textColor="@color/icon_tint_primary"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_acc_info_small"
+                        app:tint="@color/icon_tint_primary"
+                        android:contentDescription="Info" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Identity Details Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add your ID Number and select the reason to be able to pause your digital identity temporarily."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
+                    <!-- Field 1: ID Number -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/shape_input_field_bg"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ID Number"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/etIdNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="Enter ID Number"
+                            android:inputType="number"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/login_input_hint"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <!-- Field 2: Calendar -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/shape_input_field_bg"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calendar"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvCalendar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Gregorian"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <!-- Field 3: Date of Birth -->
+                    <LinearLayout
+                        android:id="@+id/layoutDob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/shape_input_field_bg"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date of Birth"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/etDob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:focusable="false"
+                            android:clickable="true"
+                            android:hint="Select Date of Birth"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/login_input_hint"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <!-- Field 4: Pausing Reason -->
+                    <LinearLayout
+                        android:id="@+id/layoutReason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/shape_input_field_bg"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pausing Reason"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvReason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Select Reason"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/login_input_hint"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

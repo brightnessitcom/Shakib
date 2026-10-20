@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_background"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Close" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/ivClose"
+            android:text="Absher Authenticator"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Two-Tab Header -->
+    <LinearLayout
+        android:id="@+id/tabLayoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <!-- Tab 1: Absher Authenticator -->
+        <LinearLayout
+            android:id="@+id/tabAuthenticator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTabAuthenticator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="Absher Authenticator"
+                android:textColor="@color/login_btn_active_bg"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/indicatorAuthenticator"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/login_btn_active_bg" />
+        </LinearLayout>
+
+        <!-- Tab 2: Linked Accounts -->
+        <LinearLayout
+            android:id="@+id/tabLinkedAccounts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTabLinkedAccounts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="Linked Accounts"
+                android:textColor="@color/text_secondary"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/indicatorLinkedAccounts"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Subtle divider under tabs -->
+    <View
+        android:id="@+id/tabDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tabLayoutContainer"
+        android:background="@color/divider_color" />
+
+    <!-- Center Empty State: Absher Authenticator -->
+    <LinearLayout
+        android:id="@+id/layoutAuthEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabDivider"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp">
+
+        <ImageView
+            android:id="@+id/ivLockStars"
+            android:layout_width="52dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_auth_lock_empty"
+            app:tint="@color/text_secondary"
+            android:contentDescription="Authenticator Not Enabled" />
+
+        <TextView
+            android:id="@+id/tvEmptyDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="Absher Authenticator is not enabled on\nthis device. Please log in to enable\nAbsher Authenticator in the app's\nSettings."
+            android:textColor="@color/text_secondary"
+            android:textSize="15.5sp" />
+    </LinearLayout>
+
+    <!-- Center Empty State: Linked Accounts (initially hidden) -->
+    <LinearLayout
+        android:id="@+id/layoutLinkedEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabDivider"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="52dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_auth_lock_empty"
+            app:tint="@color/text_secondary"
+            android:contentDescription="No Linked Accounts" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="No linked accounts found on this device."
+            android:textColor="@color/text_secondary"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+</RelativeLayout>

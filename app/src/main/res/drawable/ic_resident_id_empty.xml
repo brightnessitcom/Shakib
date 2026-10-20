@@ -1,0 +1,44 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="52dp"
+    android:height="38dp"
+    android:viewportWidth="52"
+    android:viewportHeight="38">
+    <!-- Outer Card Outline -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 6,3 L 46,3 A 4,4 0 0,1 50,7 L 50,31 A 4,4 0 0,1 46,35 L 6,35 A 4,4 0 0,1 2,31 L 2,7 A 4,4 0 0,1 6,3 Z" />
+
+    <!-- Photo Box -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 9.5,9.5 L 17.5,9.5 A 1,1 0 0,1 18.5,10.5 L 18.5,20 A 1,1 0 0,1 17.5,21 L 9.5,21 A 1,1 0 0,1 8.5,20 L 8.5,10.5 A 1,1 0 0,1 9.5,9.5 Z" />
+
+    <!-- Top line right -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M 24,11.5 L 42.5,11.5" />
+
+    <!-- Middle line right -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M 24,18.5 L 42.5,18.5" />
+
+    <!-- Bottom full width line -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M 8.5,27 L 42.5,27" />
+</vector>

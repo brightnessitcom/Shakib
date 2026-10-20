@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar: Back Arrow & Search Input -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Back"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary" />
+
+        <EditText
+            android:id="@+id/etSearchQuery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/ivClear"
+            android:layout_toEndOf="@id/ivBack"
+            android:background="@null"
+            android:hint="Search"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/search_hint"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivClear"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Clear"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/ic_close_circle"
+            android:visibility="gone"
+            app:tint="@color/text_secondary" />
+    </RelativeLayout>
+
+    <!-- Subheader Row: "Showing X results" and "Filter by" -->
+    <RelativeLayout
+        android:id="@+id/resultsHeaderRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/tvResultsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            tools:text="Showing 134 results" />
+
+        <LinearLayout
+            android:id="@+id/btnFilterBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/tvFilterByText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter by"
+                android:textColor="@color/icon_tint_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/ic_chevron_down"
+                app:tint="@color/icon_tint_primary" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Main Content Container -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Card Container with Rounded Corners holding results list -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchResults"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:scrollbars="vertical" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Empty State (No Results Found) -->
+        <LinearLayout
+            android:id="@+id/layoutNoResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_search_no_results_64"
+                app:tint="@color/empty_state_icon_tint" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="No Results Found"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:lineSpacingExtra="3dp"
+                android:text="We couldn't find a service matching your search. Try other search terms"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

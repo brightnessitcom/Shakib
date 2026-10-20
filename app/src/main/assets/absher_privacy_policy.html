@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Privacy Policy - Absher</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: #1F2937;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F1F1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #888888;
+      border-radius: 3px;
+    }
+
+    /* 1. Official Saudi Government Top Banner */
+    .gov-banner {
+      background-color: #F3F4F6;
+      padding: 10px 16px 12px 24px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .gov-banner-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .saudi-flag {
+      width: 24px;
+      height: 16px;
+      background-color: #006C35;
+      border-radius: 2px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .gov-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1F2937;
+      letter-spacing: -0.1px;
+    }
+
+    .gov-verify {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+      margin-left: 34px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #15803D;
+      cursor: pointer;
+    }
+
+    .gov-verify svg {
+      width: 13px;
+      height: 13px;
+      stroke: #15803D;
+      transition: transform 0.2s ease;
+    }
+
+    .gov-verify-details {
+      display: none;
+      margin-top: 8px;
+      margin-left: 34px;
+      font-size: 12px;
+      color: #4B5563;
+      line-height: 1.5;
+    }
+
+    /* 2. Absher Main Header */
+    .absher-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 22px 14px 24px;
+      background-color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+      z-index: 2;
+    }
+
+    .absher-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .header-icon-btn {
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+      color: #1F2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 3. Main Content Area */
+    .main-container {
+      padding: 28px 16px 70px 16px;
+      position: relative;
+    }
+
+    /* Top Row: Breadcrumb + Listen Button */
+    .top-bar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .breadcrumb-icon {
+      display: inline-flex;
+      align-items: center;
+      color: #15803D;
+    }
+
+    .breadcrumb-home {
+      color: #4B5563;
+      font-weight: 400;
+    }
+
+    .breadcrumb-sep {
+      color: #9CA3AF;
+      font-size: 13px;
+    }
+
+    /* Official Listen Button */
+    .listen-btn {
+      display: inline-flex;
+      align-items: center;
+      height: 33px;
+      border: 1px solid #9CA3AF;
+      border-radius: 2px;
+      background-color: #F9FAFB;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .listen-left {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 11px;
+      height: 100%;
+      border-right: 1px solid #D1D5DB;
+    }
+
+    .listen-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1F2937;
+    }
+
+    .listen-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 100%;
+    }
+
+    .title-divider {
+      height: 1px;
+      background-color: #E5E7EB;
+      margin-bottom: 68px;
+    }
+
+    /* Policy Typography */
+    .policy-heading {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .policy-subheading {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .policy-paragraph {
+      font-size: 15px;
+      font-weight: 400;
+      color: #4B5563;
+      line-height: 1.62;
+      margin-bottom: 12px;
+    }
+
+    .policy-section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+      margin-top: 10px;
+      margin-bottom: 6px;
+    }
+
+    /* 4. Cookies Floating Modal Card (Matches Reference Screenshot 100%) */
+    .cookies-modal {
+      position: fixed;
+      left: 16px;
+      right: 21px;
+      bottom: 34px;
+      background-color: #FFFFFF;
+      border-radius: 6px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 22px 20px 26px 20px;
+      z-index: 100;
+      border: 1px solid #F3F4F6;
+    }
+
+    .cookies-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .cookies-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cookie-icon-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: #E8F5EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cookies-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .cookies-close {
+      background: none;
+      border: none;
+      padding: 6px;
+      cursor: pointer;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cookies-body {
+      font-size: 13.8px;
+      color: #374151;
+      line-height: 1.56;
+      margin-bottom: 20px;
+    }
+
+    .cookies-body a {
+      color: #15803D;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .btn-accept {
+      width: 100%;
+      height: 46px;
+      background-color: #165B33;
+      color: #FFFFFF;
+      border: 2px solid #165B33;
+      box-shadow: inset 0 0 0 1.5px #FFFFFF;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+
+    .btn-accept:active {
+      background-color: #114627;
+    }
+
+    .btn-reject {
+      width: 100%;
+      height: 46px;
+      background-color: #FFFFFF;
+      color: #374151;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+
+    .btn-reject:active {
+      background-color: #F9FAFB;
+    }
+
+    .btn-customize {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: none;
+      border: none;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* DARK MODE SUPPORT */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #161719 !important;
+        color: #FFFFFF !important;
+      }
+      .gov-banner {
+        background-color: #1A1C1A !important;
+        border-bottom-color: #2D312E !important;
+      }
+      .gov-title {
+        color: #FFFFFF !important;
+      }
+      .gov-verify, .gov-verify svg {
+        color: #72D09D !important;
+        stroke: #72D09D !important;
+      }
+      .gov-verify-details {
+        color: #C4C7C5 !important;
+      }
+      .absher-header {
+        background-color: #161719 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+      }
+      .header-icon-btn {
+        color: #FFFFFF !important;
+      }
+      .breadcrumb-home {
+        color: #FFFFFF !important;
+      }
+      .breadcrumb-icon {
+        color: #72D09D !important;
+      }
+      .policy-heading {
+        color: #FFFFFF !important;
+      }
+      .policy-subheading {
+        color: #C4C7C5 !important;
+      }
+      .policy-section-title {
+        color: #FFFFFF !important;
+      }
+      .policy-paragraph, p, li {
+        color: #D0D4D2 !important;
+      }
+      .title-divider {
+        background-color: #383B39 !important;
+      }
+      .listen-btn {
+        background-color: #282B29 !important;
+        border-color: #383B39 !important;
+      }
+      .listen-left {
+        color: #72D09D !important;
+      }
+      .listen-text {
+        color: #FFFFFF !important;
+      }
+      .cookies-modal {
+        background-color: #282B29 !important;
+        border-color: #383B39 !important;
+        color: #FFFFFF !important;
+      }
+    }
+
+    body.dark-mode {
+      background-color: #161719 !important;
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .gov-banner {
+      background-color: #1A1C1A !important;
+      border-bottom-color: #2D312E !important;
+    }
+    body.dark-mode .gov-title {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .gov-verify, body.dark-mode .gov-verify svg {
+      color: #72D09D !important;
+      stroke: #72D09D !important;
+    }
+    body.dark-mode .gov-verify-details {
+      color: #C4C7C5 !important;
+    }
+    body.dark-mode .absher-header {
+      background-color: #161719 !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    }
+    body.dark-mode .header-icon-btn {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .breadcrumb-home {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .breadcrumb-icon {
+      color: #72D09D !important;
+    }
+    body.dark-mode .policy-heading {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .policy-subheading {
+      color: #C4C7C5 !important;
+    }
+    body.dark-mode .policy-section-title {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .policy-paragraph, body.dark-mode p, body.dark-mode li {
+      color: #D0D4D2 !important;
+    }
+    body.dark-mode .title-divider {
+      background-color: #383B39 !important;
+    }
+    body.dark-mode .listen-btn {
+      background-color: #282B29 !important;
+      border-color: #383B39 !important;
+    }
+    body.dark-mode .listen-left {
+      color: #72D09D !important;
+    }
+    body.dark-mode .listen-text {
+      color: #FFFFFF !important;
+    }
+    body.dark-mode .cookies-modal {
+      background-color: #282B29 !important;
+      border-color: #383B39 !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+  <script>
+    if (window.location.search.includes('theme=dark') || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark-mode');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('dark-mode');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- 1. Official Saudi Government Top Banner -->
+  <div class="gov-banner">
+    <div class="gov-banner-row">
+      <div class="saudi-flag" aria-hidden="true">
+        <svg width="18" height="11" viewBox="0 0 18 11" fill="none">
+          <rect x="2" y="2" width="14" height="1.5" rx="0.75" fill="white"/>
+          <rect x="3" y="4.5" width="12" height="1.2" rx="0.6" fill="white"/>
+          <rect x="5" y="7.5" width="8" height="1.3" rx="0.65" fill="white"/>
+        </svg>
+      </div>
+      <span class="gov-title">An official website of the Kingdom of Saudi Arabia</span>
+    </div>
+    <div class="gov-verify" onclick="toggleVerify()">
+      <span>How to verify?</span>
+      <svg id="verifyChevron" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+    <div id="verifyDetails" class="gov-verify-details">
+      Official websites use <strong>.gov.sa</strong> or <strong>absher.sa</strong> domains and encrypted HTTPS connections.
+    </div>
+  </div>
+
+  <!-- 2. Absher Header -->
+  <div class="absher-header">
+    <div class="absher-logo">
+      <svg width="46" height="50" viewBox="0 0 46 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="16" width="3.5" height="28" rx="1.75" fill="#006C35"/>
+        <circle cx="9.8" cy="18" r="1.7" fill="#006C35"/>
+        <rect x="8.1" y="22" width="3.4" height="19" rx="1.7" fill="#006C35"/>
+        <rect x="13" y="11" width="3.5" height="30" rx="1.75" fill="#006C35"/>
+        <circle cx="18.8" cy="14" r="1.7" fill="#006C35"/>
+        <rect x="17.1" y="18" width="3.4" height="21" rx="1.7" fill="#006C35"/>
+        <rect x="22" y="11" width="3.5" height="28" rx="1.75" fill="#006C35"/>
+        <circle cx="27.8" cy="14" r="1.7" fill="#006C35"/>
+        <rect x="26.1" y="18" width="3.4" height="21" rx="1.7" fill="#006C35"/>
+        <circle cx="32.5" cy="9" r="1.8" fill="#006C35"/>
+        <rect x="30.8" y="13" width="3.5" height="28" rx="1.75" fill="#006C35"/>
+        <circle cx="32.5" cy="44.5" r="1.8" fill="#006C35"/>
+      </svg>
+    </div>
+
+    <div class="header-actions">
+      <button class="header-icon-btn" aria-label="Search">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+
+      <button class="header-icon-btn" aria-label="Language">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="7" width="11" height="13" rx="2"></rect>
+          <path d="M10 4h8a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-4"></path>
+          <path d="M6.5 15.5L8.5 10.5L10.5 15.5"></path>
+          <line x1="7" y1="14" x2="10" y2="14"></line>
+          <path d="M14 9h3"></path>
+          <path d="M15.5 8v1"></path>
+          <path d="M14.5 12c1 0 2-.8 2-2"></path>
+        </svg>
+      </button>
+
+      <button class="header-icon-btn" aria-label="Menu">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#1F2937" stroke-width="1.8" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. Main Content -->
+  <div class="main-container">
+    <div class="top-bar-row">
+      <div class="breadcrumb">
+        <span class="breadcrumb-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="15" y2="6"></line>
+            <line x1="3" y1="12" x2="11" y2="12"></line>
+            <line x1="3" y1="18" x2="15" y2="18"></line>
+            <polyline points="19 9 15 12 19 15"></polyline>
+          </svg>
+        </span>
+        <span class="breadcrumb-home">Home</span>
+        <span class="breadcrumb-sep">&#8250;</span>
+      </div>
+
+      <!-- ReadSpeaker Listen Widget -->
+      <div class="listen-btn" onclick="toggleCookiesOrRead()">
+        <div class="listen-left">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="#2563EB"/>
+            <path d="M15.54 8.46C16.47 9.4 17 10.67 17 12C17 13.33 16.47 14.6 15.54 15.54" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18.36 5.64C20.05 7.33 21 9.61 21 12C21 14.39 20.05 16.67 18.36 18.36" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="listen-text">Listen</span>
+        </div>
+        <div class="listen-right">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#15803D">
+            <polygon points="6 4 20 12 6 20 6 4"></polygon>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="title-divider"></div>
+
+    <!-- Privacy Policy Content -->
+    <div class="policy-heading">Privacy Policy</div>
+    <div class="policy-subheading">First item: Introduction</div>
+
+    <p class="policy-paragraph">
+      Believing in the importance of the data and its confidentiality, and ensuring that the management of (Absher) provides the best levels of service while committing to maintaining the confidentiality and privacy of the user's data and information entered, (Absher) is committed to maintaining the confidentiality and privacy of user data and information entered, and this privacy policy has been prepared to help you understand the nature of the data that we collect when visiting the platform or using the smart application and how we deal with this data.
+    </p>
+
+    <div class="policy-section-title">Second item: Collection of Information</div>
+    <p class="policy-paragraph">
+      Users can visit the (Absher) platform and benefit from its electronic services safely. When using the smart application, the platform collects and processes personal data strictly in accordance with the regulations of the Kingdom of Saudi Arabia to ensure secure authentication and service delivery.
+    </p>
+
+    <div class="policy-section-title">First: Collection of Information:</div>
+    <p class="policy-paragraph">
+      When you access or use the Absher platform and smart application, the system processes only the essential information required to verify your identity, execute your requests, and maintain the security of your digital account.<br/><br/>
+      The categories of data collected and processed by the application include the following:<br/><br/>
+      1- Contact information: The application may collect some contact data such as mobile number and email address to send notifications and verification codes.<br/><br/>
+      2- Digital identity and biometric data: Used solely for identity verification and secure login via Nafath and Absher services.<br/><br/>
+      3- Location and device information: Collected only when required by specific electronic services (such as nearest branch or activation site locator).
+    </p>
+
+    <div class="policy-section-title">Third item: Protection of Privacy</div>
+    <p class="policy-paragraph">
+      To help you protect your personal information, we recommend the following:<br/>
+      1- Never share your Absher username, password, or OTP verification code with anyone.<br/>
+      2- Always ensure you are using the official Absher application or website (absher.sa).
+    </p>
+  </div>
+
+  <!-- 4. Cookies Popup Card -->
+  <div id="cookiesModal" class="cookies-modal">
+    <div class="cookies-header">
+      <div class="cookies-title-group">
+        <div class="cookie-icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+            <path d="M8.5 8.5v.01"></path>
+            <path d="M16 15.5v.01"></path>
+            <path d="M12 12v.01"></path>
+            <path d="M11 17v.01"></path>
+            <path d="M7 14v.01"></path>
+          </svg>
+        </div>
+        <span class="cookies-title">Cookies</span>
+      </div>
+      <button class="cookies-close" onclick="closeCookies()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <p class="cookies-body">
+      This website may use cookies for functional purposes, such as providing an improved user experience and understanding user preferences. By continuing to use this website, you consent to the use of cookies as described in our <a href="javascript:void(0)" onclick="closeCookies()">Privacy Policy.</a> Users have the option to refuse the use of cookies by adjusting their browser settings.
+    </p>
+
+    <button class="btn-accept" onclick="closeCookies()">Accept</button>
+    <button class="btn-reject" onclick="closeCookies()">Reject</button>
+    <button class="btn-customize" onclick="closeCookies()">Customize the Options</button>
+  </div>
+
+  <script>
+    function closeCookies() {
+      var modal = document.getElementById('cookiesModal');
+      if (modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    function toggleVerify() {
+      var details = document.getElementById('verifyDetails');
+      var chevron = document.getElementById('verifyChevron');
+      if (details.style.display === 'block') {
+        details.style.display = 'none';
+        chevron.style.transform = 'rotate(0deg)';
+      } else {
+        details.style.display = 'block';
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    function toggleCookiesOrRead() {
+      closeCookies();
+    }
+  </script>
+</body>
+</html>

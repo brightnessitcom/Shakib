@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Card outline -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 9,12 L 39,12 A 4,4 0 0,1 43,16 L 43,32 A 4,4 0 0,1 39,36 L 9,36 A 4,4 0 0,1 5,32 L 5,16 A 4,4 0 0,1 9,12 Z" />
+
+    <!-- Top solid line -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:pathData="M 12,20 L 36,20" />
+
+    <!-- Bottom dashed/segmented line -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:pathData="M 12,28 L 18,28 M 23,28 L 36,28" />
+
+</vector>

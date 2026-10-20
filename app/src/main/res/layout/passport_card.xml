@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/card_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@+id/header_layout"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/card_icon"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/passport_ic_gray"
+                app:tint="@color/text_secondary"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/passport_icon_description"
+                android:layout_marginEnd="12dp"/>
+
+            <TextView
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:id="@+id/card_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/passport_card_title"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/arrow_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_arrow_down"
+                app:tint="@color/text_secondary"
+                android:contentDescription="@string/toggle_details_arrow"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator_line"
+            android:background="@color/divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/card_content"
+            android:padding="16dp"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/passport_number_label"/>
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="15sp"
+                    android:textColor="@color/text_secondary"
+                    android:id="@+id/passport_number_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/passport_number"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/copyimgicopassport"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_cpy"
+                    app:tint="@color/icon_tint_primary"
+                    android:contentDescription="@string/copy_passport_number_description"/>
+            </LinearLayout>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingTop="18dp"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/type_label"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:id="@+id/passport_type_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/passport_type_normal"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingTop="18dp"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/passport_issuing_date_label"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:id="@+id/passport_issue_date_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/passport_issue_date"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingTop="18dp"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/passport_expiry_date_label"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:id="@+id/passport_expiry_date_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/passport_expiry_date"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingTop="18dp"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/issuing_city_label"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="start"
+                android:id="@+id/passport_city_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/passport_city"
+                android:textAlignment="viewStart"
+                android:layoutDirection="ltr"/>
+
+            <TextView
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:paddingTop="18dp"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/status_label"/>
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:id="@+id/passport_status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_background"
+        android:paddingHorizontal="14dp">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Close" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/ivClose"
+            android:text="Authenticate"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Button (ZERO Bottom Nav) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        app:backgroundTint="@color/login_btn_disabled_bg"
+        app:cornerRadius="10dp"
+        app:elevation="0dp"
+        android:textAllCaps="false"
+        android:text="Continue"
+        android:textColor="@color/login_btn_active_text"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <!-- Scrollable Body -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/btnContinue"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="24dp">
+
+            <!-- Step Pill: STEP 1/2 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_step_pill"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STEP 1/2"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Dot 1 (Active) -->
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_circle_badge"
+                    android:backgroundTint="@color/icon_tint_primary" />
+
+                <!-- Dot 2 -->
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/bg_circle_badge"
+                    android:backgroundTint="@color/divider_color" />
+            </LinearLayout>
+
+            <!-- Section Heading: Select Identity Type -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Select Identity Type"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Service Info Banner -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Read more information about the service here"
+                        android:textColor="@color/icon_tint_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_info_outline"
+                        app:tint="@color/icon_tint_primary"
+                        android:contentDescription="Info" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Identity Type Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/prelogin_card_bg"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/prelogin_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Header & Subtitle -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Identity Type"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="This service allows visitors without a digital identity in Absher to create an arrival trip to the Kingdom of Saudi Arabia via land border crossings."
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_color" />
+
+                    <!-- Option 1: GCC Citizens -->
+                    <LinearLayout
+                        android:id="@+id/optGcc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="GCC Citizens"
+                                android:textColor="@color/text_primary"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Gulf Cooperation Council (Bahrain, Kuwait, Oman, Qatar and the United Arab Emirates)"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/radioGcc"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_radio_unselected"
+                            app:tint="@color/text_secondary" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_color" />
+
+                    <!-- Option 2: Non-GCC Citizens -->
+                    <LinearLayout
+                        android:id="@+id/optNonGcc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Non-GCC Citizens"
+                                android:textColor="@color/text_primary"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Outside of Gulf Cooperation Countries"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/radioNonGcc"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_radio_unselected"
+                            app:tint="@color/text_secondary" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- White Background Card Container -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/qrCardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginVertical="170dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Responsive Guideline at 45dp from start to hold vertical text -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sidebarGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="45dp" />
+
+            <!-- The QR Image Section (takes remaining space) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/qrImageFrame"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:strokeColor="#EEEEEE"
+                app:strokeWidth="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sidebarGuideline"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/qrImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:contentDescription="@string/qr_code_image_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/qr_background" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Vertical Side Layout (Centered in the 45dp sidebar) -->
+            <LinearLayout
+                android:id="@+id/verticalSideLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:rotation="90"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/qrImageFrame"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/qrLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/qr_update_label"
+                    android:textColor="#333333"
+                    android:textSize="11sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/qrCountdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/bg_countdown"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:text="@string/qr_countdown_initial_value"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

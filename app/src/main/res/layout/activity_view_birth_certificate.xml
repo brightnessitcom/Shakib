@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar with Close X -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Close" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/ivClose"
+            android:text="View Birth Certificate"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Scrollable Body Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/btnViewBirthCertificate"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Section Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Select Beneficiary"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- Info Pill / Banner -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@id/ivInfo"
+                        android:layout_marginEnd="12dp"
+                        android:text="Read more information about the service here"
+                        android:textColor="@color/icon_tint_primary"
+                        android:textSize="13.5sp" />
+
+                    <ImageView
+                        android:id="@+id/ivInfo"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_info_outline"
+                        app:tint="@color/icon_tint_primary"
+                        android:contentDescription="Info" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Beneficiary Selection Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Birth Certificate Beneficiary"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Select who you want to view the Birth Certificate for."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@color/divider_color" />
+
+                    <!-- Option 1: Myself -->
+                    <LinearLayout
+                        android:id="@+id/rowMyself"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Myself"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/ivRadioMyself"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_radio_unselected"
+                            android:contentDescription="Radio" />
+                    </LinearLayout>
+
+                    <!-- Option 2: Family Member -->
+                    <LinearLayout
+                        android:id="@+id/rowFamilyMember"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Family Member"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/ivRadioFamilyMember"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_radio_unselected"
+                            android:contentDescription="Radio" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Action Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnViewBirthCertificate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:backgroundTint="@color/btn_service_action_disabled_bg"
+        app:cornerRadius="16dp"
+        app:elevation="0dp"
+        android:textAllCaps="false"
+        android:text="View Birth Certificate"
+        android:textColor="@color/btn_service_action_disabled_text"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

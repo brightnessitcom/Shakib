@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Outer Card: Significantly smaller and pushed right -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/outerCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="17dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="W,476:240"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="@dimen/card_item_height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/card_item_width">
+
+        <FrameLayout
+            android:id="@+id/qrCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- The entire image (QR + Text + Timer) centered in the white card -->
+            <ImageView
+                android:id="@+id/qrImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/qr_code_image_description" />
+
+            <!-- Hidden elements to maintain compatibility with existing Java code -->
+            <LinearLayout
+                android:id="@+id/qrLabelLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone">
+                <TextView android:id="@+id/qrLabel" android:layout_width="0dp" android:layout_height="0dp" />
+                <TextView android:id="@+id/qrCountdown" android:layout_width="0dp" android:layout_height="0dp" />
+            </LinearLayout>
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

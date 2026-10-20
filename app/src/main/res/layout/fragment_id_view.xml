@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161719">
+
+    <RelativeLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Top Bar for standalone use (hidden when inside DigitalDocumentsActivity) -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:background="#161719"
+            android:elevation="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/settingsIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="@string/settings"
+                    android:focusable="true"
+                    android:padding="6dp"
+                    android:src="@drawable/arrow_l"
+                    app:tint="#72D09D" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/settingsIcon"
+                    android:text="@string/digital_documents_title"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Loading Layout -->
+        <LinearLayout
+            android:id="@+id/loadingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/topBar"
+            android:background="#161719"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loadingAnimation"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/absher_loading" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/Loading_Information"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- Main Content with Pull-To-Refresh -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayoutt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/topBar">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="24dp">
+
+                    <!-- Subtitle: Last updated & Pull to update -->
+                    <LinearLayout
+                        android:id="@+id/ducc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingVertical="4dp">
+
+                        <TextView
+                            android:id="@+id/lastUpdatedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
+                            android:text="@string/last_updated_status"
+                            android:textColor="#8E9296"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pull_to_update_prompt"
+                            android:textColor="#8E9296"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <!-- Section Title: Resident ID -->
+                    <TextView
+                        android:id="@+id/residesnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="12dp"
+                        android:text="@string/resident_id_section_title"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <!-- Main Document Card (Iqama + Expired Notice) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardDocument"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardBackgroundColor="#232527"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Iqama Card Image -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iqamaidview"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:contentDescription="@string/resident_id_card_image"
+                                    android:scaleType="fitXY"
+                                    app:layout_constraintDimensionRatio="H,1.58:1"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <!-- Expired/Invalid Document Warning Banner -->
+                            <LinearLayout
+                                android:id="@+id/llExpiredWarning"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#232527"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="16dp"
+                                android:visibility="gone">
+
+                                <FrameLayout
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    android:background="@drawable/bg_expired_circle_badge">
+
+                                    <ImageView
+                                        android:layout_width="22dp"
+                                        android:layout_height="22dp"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="Warning"
+                                        android:src="@drawable/ic_error_circle_red" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/tvExpiredNotice"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="14dp"
+                                    android:layout_weight="1"
+                                    android:lineSpacingExtra="3dp"
+                                    android:text="@string/document_expired_banner_text"
+                                    android:textColor="#D0D4D8"
+                                    android:textSize="13sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+</FrameLayout>

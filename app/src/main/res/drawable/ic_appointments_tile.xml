@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Circular Arc from 10:30 clockwise through 12, 3, 6 to 9 o'clock (gap between 9:00 and 10:30) -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 12.5,12.8 A 16,16 0 0,1 24,8 A 16,16 0 0,1 40,24 A 16,16 0 0,1 24,40 A 16,16 0 0,1 8,23.5" />
+
+    <!-- Right-angled Arrowhead at 10:30 pointing counter-clockwise -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 12.5,6.2 L 12.5,12.8 L 19.1,12.8" />
+
+    <!-- Clock Hands: 12 o'clock to center, then angled down-right to 4:30 -->
+    <path
+        android:strokeColor="#72D09D"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 24,14 L 24,24.5 L 29.8,30.3" />
+
+</vector>

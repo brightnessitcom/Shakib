@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <link rel="stylesheet" href="file:///android_asset/leaflet.css" />
+  <style>
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #202020;
+      overflow: hidden;
+    }
+    #map {
+      width: 100%;
+      height: 100%;
+      background-color: #202020;
+    }
+    .leaflet-container {
+      background-color: #202020 !important;
+    }
+    .leaflet-control-attribution, .leaflet-control-zoom {
+      display: none !important;
+    }
+    /* Sleek Google dark mode filter */
+    .leaflet-tile {
+      filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(90%);
+    }
+    /* Google watermark */
+    .google-watermark {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      z-index: 1000;
+      pointer-events: none;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: rgba(255, 255, 255, 0.75);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="google-watermark">Google</div>
+
+  <script src="file:///android_asset/leaflet.js"></script>
+  <script>
+    var currentLat = 24.8949;
+    var currentLng = 91.8687;
+    var map;
+    var haloMarker;
+    var dotMarker;
+
+    function initMap(lat, lng) {
+      currentLat = lat;
+      currentLng = lng;
+
+      map = L.map('map', {
+        center: [currentLat, currentLng],
+        zoom: 14,
+        zoomControl: false,
+        attributionControl: false
+      });
+
+      // Real Google Maps tiles
+      L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20
+      }).addTo(map);
+
+      // Outer soft blue halo
+      haloMarker = L.circleMarker([currentLat, currentLng], {
+        radius: 14,
+        fillColor: '#2979FF',
+        fillOpacity: 0.25,
+        stroke: false,
+        interactive: false
+      }).addTo(map);
+
+      // Inner crisp blue dot with white border (matching Google Maps location pin)
+      dotMarker = L.circleMarker([currentLat, currentLng], {
+        radius: 7,
+        fillColor: '#2979FF',
+        fillOpacity: 1,
+        color: '#FFFFFF',
+        weight: 2.5,
+        opacity: 1,
+        interactive: false
+      }).addTo(map);
+    }
+
+    function setLocation(lat, lng) {
+      currentLat = lat;
+      currentLng = lng;
+      if (map) {
+        map.setView([lat, lng], 14, { animate: true });
+        if (haloMarker) haloMarker.setLatLng([lat, lng]);
+        if (dotMarker) dotMarker.setLatLng([lat, lng]);
+      }
+    }
+
+    initMap(24.8949, 91.8687);
+  </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/arrow_l"
+            app:tint="@color/icon_tint_primary"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/ivBack"
+            android:text="Plate Digital Wallet"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bottom_nav_bg"
+        app:elevation="8dp"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextAppearanceActive="@style/BottomNavTextAppearance"
+        app:itemTextAppearanceInactive="@style/BottomNavTextAppearance"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottom_navigation"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Emerald Green Hero Card with License Plates Illustration -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/bg_plate_wallet_banner">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_plate_wallet_hero" />
+            </FrameLayout>
+
+            <!-- Heading -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:lineSpacingExtra="3dp"
+                android:text="Store and Manage Your Plates\nDigitally"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="3dp"
+                android:text="Keep your most valued plates stored and registered under your identity"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="32dp" />
+
+            <!-- Create Your Plate Wallet Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCreatePlateWallet"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="14dp"
+                android:backgroundTint="@color/login_btn_active_bg"
+                android:text="Create Your Plate Wallet"
+                android:textAllCaps="false"
+                android:textColor="@color/login_btn_active_text"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+            <!-- Setup fee info notice -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_info_circle"
+                    app:tint="@color/text_secondary" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="2dp"
+                    android:text="To manage your plates through Plate Wallet, you first need to pay a one-time set up fee of 402.5 SAR"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
