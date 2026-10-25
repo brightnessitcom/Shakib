@@ -4,7 +4,7 @@
     android:layout_width="160dp"
     android:layout_height="100dp"
     android:layout_margin="8dp"
-    card_view:cardCornerRadius="8dp"
+    card_view:cardCornerRadius="22dp"
     card_view:cardElevation="4dp">
     <LinearLayout
         android:orientation="horizontal"

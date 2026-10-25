@@ -232,12 +232,14 @@ public class Settingsvact extends AppCompatActivity {
             rbEnglish.setOnClickListener(v -> {
                 if (!LANG_ENGLISH.equals(LanguageHelper.getLanguage(this))) {
                     setLocale(LANG_ENGLISH);
+                    DynamicCardRenderer.clearCache();
                     recreateActivity();
                 }
             });
             rbArabic.setOnClickListener(v -> {
                 if (!LANG_ARABIC.equals(LanguageHelper.getLanguage(this))) {
                     setLocale(LANG_ARABIC);
+                    DynamicCardRenderer.clearCache();
                     recreateActivity();
                 }
             });
@@ -269,6 +271,7 @@ public class Settingsvact extends AppCompatActivity {
                         tvCalendarSubtitle.setText(getString(R.string.settings_calendar_subtitle, calLabel));
                     }
                     Toast.makeText(this, "Calendar set to " + newType, Toast.LENGTH_SHORT).show();
+                    DynamicCardRenderer.clearCache();
                     recreateActivity();
                 }
             });

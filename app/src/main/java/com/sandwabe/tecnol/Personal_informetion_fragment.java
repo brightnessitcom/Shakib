@@ -412,4 +412,5 @@ public class Personal_informetion_fragment extends Fragment {
             view.setBackgroundColor(separatorColor);
         }
     }
+
 }

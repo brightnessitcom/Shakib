@@ -11,13 +11,15 @@ import java.util.Locale;
 public class DateUtils {
     
     public static String formatDisplayDate(Context context, String dateStr) {
-        if (dateStr == null || dateStr.isEmpty() || dateStr.equalsIgnoreCase("null") || dateStr.equals("-") || dateStr.equals("_")) {
+        if (dateStr == null || dateStr.trim().isEmpty() || dateStr.equalsIgnoreCase("null") || dateStr.equals("-") || dateStr.equals("_")) {
             return dateStr;
         }
 
         try {
+            // Normalize Arabic digits to Western digits for robust parsing
+            String normalized = ArabicUtils.toWesternNumerals(dateStr.trim());
             // Support both - and / as separators
-            String cleanDate = dateStr.replace("/", "-");
+            String cleanDate = normalized.replace("/", "-");
             String[] parts = cleanDate.split("-");
             if (parts.length != 3) return dateStr;
 
@@ -32,7 +34,6 @@ public class DateUtils {
                 month = Integer.parseInt(parts[1]);
                 year = Integer.parseInt(parts[2]);
             } else {
-                // Fallback: assume last part is year if not specified
                 day = Integer.parseInt(parts[0]);
                 month = Integer.parseInt(parts[1]);
                 year = Integer.parseInt(parts[2]);
@@ -76,6 +77,74 @@ public class DateUtils {
             }
         } catch (Exception e) {
             return dateStr;
+        }
+    }
+
+    /**
+     * Formats date specifically for the official Muqeem ID card graphic (yyyy/MM/dd with Arabic-Indic numerals).
+     */
+    public static String formatCardDate(Context context, String dateStr) {
+        if (dateStr == null || dateStr.trim().isEmpty() || dateStr.equalsIgnoreCase("null") || dateStr.equals("-") || dateStr.equals("_")) {
+            return "";
+        }
+
+        try {
+            String normalized = ArabicUtils.toWesternNumerals(dateStr.trim());
+            String cleanDate = normalized.replace("/", "-");
+            String[] parts = cleanDate.split("-");
+            if (parts.length != 3) {
+                return ArabicUtils.toArabicNumerals(dateStr.replace("-", "/"));
+            }
+
+            int year, month, day;
+            if (parts[0].length() == 4) { // yyyy-MM-dd
+                year = Integer.parseInt(parts[0]);
+                month = Integer.parseInt(parts[1]);
+                day = Integer.parseInt(parts[2]);
+            } else if (parts[2].length() == 4) { // dd-MM-yyyy
+                day = Integer.parseInt(parts[0]);
+                month = Integer.parseInt(parts[1]);
+                year = Integer.parseInt(parts[2]);
+            } else {
+                day = Integer.parseInt(parts[0]);
+                month = Integer.parseInt(parts[1]);
+                year = Integer.parseInt(parts[2]);
+            }
+
+            SharedPreferences prefs = context.getSharedPreferences("UserAppPrefs", Context.MODE_PRIVATE);
+            String calendarType = prefs.getString(Settingsvact.KEY_CALENDAR_TYPE, Settingsvact.CALENDAR_GREGORIAN);
+            boolean showHijri = Settingsvact.CALENDAR_HIJRI.equals(calendarType);
+
+            boolean isInputHijri = (year < 1600);
+
+            String formattedWestern;
+            if (isInputHijri == showHijri) {
+                formattedWestern = String.format(Locale.US, "%04d/%02d/%02d", year, month, day);
+            } else if (showHijri) {
+                // Gregorian -> Hijri
+                java.util.Calendar gregCal = java.util.Calendar.getInstance();
+                gregCal.set(year, month - 1, day, 12, 0);
+                ULocale locale = new ULocale("en@calendar=islamic-umalqura");
+                IslamicCalendar hijriCalendar = new IslamicCalendar(locale);
+                hijriCalendar.setTimeInMillis(gregCal.getTimeInMillis());
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd", locale);
+                formattedWestern = sdf.format(hijriCalendar);
+            } else {
+                // Hijri -> Gregorian
+                ULocale locale = new ULocale("en@calendar=islamic-umalqura");
+                IslamicCalendar hijriCalendar = new IslamicCalendar(locale);
+                hijriCalendar.set(IslamicCalendar.YEAR, year);
+                hijriCalendar.set(IslamicCalendar.MONTH, month - 1);
+                hijriCalendar.set(IslamicCalendar.DAY_OF_MONTH, day);
+                hijriCalendar.set(IslamicCalendar.HOUR_OF_DAY, 12);
+                Date date = new Date(hijriCalendar.getTimeInMillis());
+                java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy/MM/dd", Locale.US);
+                formattedWestern = sdf.format(date);
+            }
+
+            return ArabicUtils.toArabicNumerals(formattedWestern);
+        } catch (Exception e) {
+            return ArabicUtils.toArabicNumerals(dateStr.replace("-", "/"));
         }
     }
 

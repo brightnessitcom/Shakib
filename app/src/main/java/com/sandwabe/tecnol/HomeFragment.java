@@ -92,6 +92,28 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    private void renderDynamicCard(User user) {
+        if (idImageView == null || getContext() == null || user == null) return;
+        if (lottieOverlay != null) lottieOverlay.setVisibility(View.VISIBLE);
+        if (idLoadingAnimation != null) idLoadingAnimation.playAnimation();
+        new Handler(Looper.getMainLooper()).postDelayed(this::hideLoadingOverlayAndShowImage, 2500);
+
+        DynamicCardRenderer.renderCardAsync(getContext(), user, new DynamicCardRenderer.CardCallback() {
+            @Override
+            public void onCardRendered(@NonNull android.graphics.Bitmap cardBitmap) {
+                if (!isAdded()) return;
+                idImageView.setImageBitmap(cardBitmap);
+                hideLoadingOverlayAndShowImage();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                if (!isAdded()) return;
+                loadIdImage(user.getId_image_url());
+            }
+        });
+    }
+
     private void loadIdImage(String str) {
         if (idImageView == null) return;
         
@@ -176,7 +198,7 @@ public class HomeFragment extends Fragment {
         }
 
         loadProfileImage(user.getProfile_image_url());
-        loadIdImage(user.getId_image_url());
+        renderDynamicCard(user);
     }
 
     private void loadProfileImage(String str) {

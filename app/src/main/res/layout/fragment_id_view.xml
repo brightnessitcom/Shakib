@@ -145,8 +145,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
-                        app:cardBackgroundColor="#232527"
-                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="22dp"
                         app:cardElevation="0dp"
                         app:strokeWidth="0dp">
 
@@ -166,6 +166,7 @@
                                     android:layout_height="0dp"
                                     android:contentDescription="@string/resident_id_card_image"
                                     android:scaleType="fitXY"
+                                    app:shapeAppearanceOverlay="@style/RoundedCardImage"
                                     app:layout_constraintDimensionRatio="H,1.58:1"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"

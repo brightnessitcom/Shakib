@@ -115,6 +115,14 @@ public class FullScreenIdActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         if (adapter != null && adapter.activeQrViewHolder != null && adapter.activeQrViewHolder.timer != null) {
@@ -168,6 +176,28 @@ public class FullScreenIdActivity extends AppCompatActivity {
 
             void bind() {
                 if (currentUser != null) {
+                    DynamicCardRenderer.renderCardAsync(FullScreenIdActivity.this, currentUser, new DynamicCardRenderer.CardCallback() {
+                        @Override
+                        public void onCardRendered(@androidx.annotation.NonNull android.graphics.Bitmap cardBitmap) {
+                            if (!isFinishing() && !isDestroyed()) {
+                                ivIdCard.setImageBitmap(cardBitmap);
+                            }
+                        }
+                        @Override
+                        public void onError(Exception e) {
+                            String url = resolveImageUrl(currentUser.getId_image_url());
+                            if (url != null && !url.isEmpty()) {
+                                Glide.with(FullScreenIdActivity.this)
+                                    .load(url)
+                                    .placeholder(R.drawable.absher)
+                                    .error(R.drawable.absher)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                    .override(1800)
+                                    .into(ivIdCard);
+                            }
+                        }
+                    });
+                    if (true) return;
                     String url = resolveImageUrl(currentUser.getId_image_url());
                     if (url != null && !url.isEmpty()) {
                         Glide.with(FullScreenIdActivity.this)

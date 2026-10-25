@@ -65,8 +65,8 @@ public class User implements Serializable {
             user.phone_number = getV(map, "phone number", "phone_number", "phone");
             
             // NAMES
-            user.iqama_holder_name = getV(map, "iqama holder_name", "iqama_holder_name", "name");
-            user.iqama_holder_name_arabic = getV(map, "iqama holder_name_arabic", "iqama_holder_name_arabic", "arabic_name");
+            user.iqama_holder_name = getV(map, "iqama holder_name", "iqama_holder_name", "name", "nameEn", "name_en");
+            user.iqama_holder_name_arabic = getV(map, "iqama holder_name_arabic", "iqama_holder_name_arabic", "arabic_name", "nameAr", "name_ar", "arabicName", "iqama_holder_name_ar");
             
             // IQAMA DATES & INFO (Crucial mapping for Expiry)
             user.iqama_number_withid = getV(map, "iqama_number_withid", "iqama number", "iqama_no");
@@ -156,7 +156,15 @@ public class User implements Serializable {
     public String getIqamaExpire() { return iqamaExpire; }
     public String getIqamaIssue() { return iqamaIssue; }
     public String getIqama_holder_name() { return iqama_holder_name; }
-    public String getIqama_holder_name_arabic() { return iqama_holder_name_arabic; }
+    public String getIqama_holder_name_arabic() {
+        if (iqama_holder_name_arabic != null && !iqama_holder_name_arabic.trim().isEmpty() && !iqama_holder_name_arabic.equalsIgnoreCase("null")) {
+            return iqama_holder_name_arabic.trim();
+        }
+        if (iqama_holder_name != null && !iqama_holder_name.trim().isEmpty() && !iqama_holder_name.equalsIgnoreCase("null")) {
+            return ArabicUtils.transliterateEnglishNameToArabic(iqama_holder_name);
+        }
+        return "محمد ياسين احمد";
+    }
     public String getIqama_number_withid() { return iqama_number_withid; }
     public String getIqama_number_withidTow() { return iqama_number_withidTow; }
     public boolean isAdmin() { return isAdmin; }

@@ -51,6 +51,23 @@ public class IdViewFragment extends Fragment {
         }
     }
 
+    private void renderDynamicCard(User user) {
+        if (iqamaidview == null || getContext() == null || user == null) return;
+        DynamicCardRenderer.renderCardAsync(getContext(), user, new DynamicCardRenderer.CardCallback() {
+            @Override
+            public void onCardRendered(@NonNull android.graphics.Bitmap cardBitmap) {
+                if (!isAdded()) return;
+                iqamaidview.setImageBitmap(cardBitmap);
+            }
+
+            @Override
+            public void onError(Exception e) {
+                if (!isAdded()) return;
+                loadIdImage(user.getId_image_url());
+            }
+        });
+    }
+
     private void loadIdImage(String url) {
         if (url == null || url.trim().isEmpty() || Objects.equals(url, "null")) {
             iqamaidview.setImageResource(R.drawable.absher);
@@ -75,7 +92,7 @@ public class IdViewFragment extends Fragment {
         User cached = ApiClient.getCachedUser();
         if (cached != null) {
             currentUser = cached;
-            loadIdImage(currentUser.getId_image_url());
+            renderDynamicCard(currentUser);
             updateExpiredWarning();
             isDataLoaded = true;
         }
@@ -88,7 +105,7 @@ public class IdViewFragment extends Fragment {
                     if (!isAdded()) return;
                     currentUser = user;
                     requireActivity().runOnUiThread(() -> {
-                        loadIdImage(currentUser.getId_image_url());
+                        renderDynamicCard(currentUser);
                         updateExpiredWarning();
                         isDataLoaded = true;
                     });
@@ -228,6 +245,9 @@ public class IdViewFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        if (currentUser != null) {
+            renderDynamicCard(currentUser);
+        }
         if (getActivity() instanceof MainActivity) {
             ((MainActivity) getActivity()).setFloatingImageVisible(false);
         }

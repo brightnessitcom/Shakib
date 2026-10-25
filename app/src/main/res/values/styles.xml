@@ -38,6 +38,11 @@
     <item name="android:textAppearance">?android:attr/textAppearanceListItemSecondary</item>
   </style>
 
+  <style name="RoundedCardImage">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">22dp</item>
+  </style>
+
   <style name="RoundedCornerImage">
     <item name="cornerFamily">rounded</item>
     <item name="cornerSize">5dp</item>
