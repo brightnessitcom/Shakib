@@ -112,7 +112,7 @@ public class Resident_detals_freg extends Fragment {
     }
 
     private void updateResidentUI(User user) {
-        String iqama_number_withidTow = user.getIqama_number_withidTow();
+        String iqama_number_withidTow = user.getMyResidentId();
         if (isValidData(iqama_number_withidTow)) {
             this.residentIdText.setText(getString(R.string.iqama_number_withidTow, iqama_number_withidTow));
         } else {

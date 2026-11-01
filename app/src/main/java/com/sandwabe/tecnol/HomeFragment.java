@@ -1,6 +1,7 @@
 package com.sandwabe.tecnol;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -244,10 +245,22 @@ public class HomeFragment extends Fragment {
         idLoadingAnimation = view.findViewById(R.id.idLoadingAnimation);
         lottieOverlay = view.findViewById(R.id.lottieOverlay);
         llIdError = view.findViewById(R.id.llIdError);
+        View cardQuickSurvey = view.findViewById(R.id.cardQuickSurvey);
+        if (cardQuickSurvey != null && getContext() != null) {
+            if (getContext().getSharedPreferences("AppConfig", Context.MODE_PRIVATE).getBoolean("pref_survey_dismissed", false)) {
+                cardQuickSurvey.setVisibility(View.GONE);
+            }
+        }
         View btnStartSurvey = view.findViewById(R.id.btnStartSurvey);
         if (btnStartSurvey != null) {
             btnStartSurvey.setOnClickListener(v -> {
-                Toast.makeText(getContext(), "Survey opened", Toast.LENGTH_SHORT).show();
+                View card = view.findViewById(R.id.cardQuickSurvey);
+                if (card != null) {
+                    card.animate().alpha(0f).translationY(-15f).setDuration(220).withEndAction(() -> card.setVisibility(View.GONE)).start();
+                }
+                if (getContext() != null) {
+                    getContext().getSharedPreferences("AppConfig", Context.MODE_PRIVATE).edit().putBoolean("pref_survey_dismissed", true).apply();
+                }
             });
         }
 

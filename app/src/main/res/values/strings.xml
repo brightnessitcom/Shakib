@@ -321,7 +321,7 @@
   <!-- Home & Survey -->
   <string name="survey_title">Take a Quick Survey</string>
   <string name="survey_subtitle">Share your experience with Absher to help us improve.</string>
-  <string name="survey_action">Start Survey</string>
+  <string name="survey_action">Later</string>
   <string name="id_not_available">ID: Not Available</string>
 
   <!-- Pre-Login Services -->

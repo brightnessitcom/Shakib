@@ -295,7 +295,7 @@
     <!-- Home & Survey -->
     <string name="survey_title">شاركنا برأيك في استبيان قصير</string>
     <string name="survey_subtitle">شارك تجربتك مع منصة أبشر لمساعدتنا في التحسين.</string>
-    <string name="survey_action">ابدأ الاستبيان</string>
+    <string name="survey_action">لاحقاً</string>
     <string name="id_not_available">رقم الهوية: غير متوفر</string>
 
     <!-- Pre-Login Services -->

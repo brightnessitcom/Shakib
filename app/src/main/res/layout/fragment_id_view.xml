@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#161719">
+    android:background="@color/app_background">
 
     <RelativeLayout
         android:id="@+id/mainContent"
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_alignParentTop="true"
-            android:background="#161719"
+            android:background="@color/app_background"
             android:elevation="0dp"
             app:contentInsetStart="0dp">
 
@@ -37,7 +37,7 @@
                     android:focusable="true"
                     android:padding="6dp"
                     android:src="@drawable/arrow_l"
-                    app:tint="#72D09D" />
+                    app:tint="@color/icon_tint_primary" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_toEndOf="@id/settingsIcon"
                     android:text="@string/digital_documents_title"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/text_primary"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </RelativeLayout>
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/topBar"
-            android:background="#161719"
+            android:background="@color/app_background"
             android:gravity="center"
             android:orientation="vertical"
             android:visibility="gone">
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:text="@string/Loading_Information"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/text_primary"
                 android:textSize="17sp" />
         </LinearLayout>
 
@@ -90,6 +90,7 @@
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/app_background"
                 android:fillViewport="true">
 
                 <LinearLayout
@@ -114,14 +115,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="2dp"
                             android:text="@string/last_updated_status"
-                            android:textColor="#8E9296"
+                            android:textColor="@color/text_secondary"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/pull_to_update_prompt"
-                            android:textColor="#8E9296"
+                            android:textColor="@color/text_secondary"
                             android:textSize="13sp" />
                     </LinearLayout>
 
@@ -134,7 +135,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="12dp"
                         android:text="@string/resident_id_section_title"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/text_primary"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -178,7 +179,7 @@
                                 android:id="@+id/llExpiredWarning"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#232527"
+                                android:background="@color/doc_error_container_bg"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal"
                                 android:padding="16dp"
@@ -205,7 +206,7 @@
                                     android:layout_weight="1"
                                     android:lineSpacingExtra="3dp"
                                     android:text="@string/document_expired_banner_text"
-                                    android:textColor="#D0D4D8"
+                                    android:textColor="@color/doc_error_text"
                                     android:textSize="13sp" />
                             </LinearLayout>
 

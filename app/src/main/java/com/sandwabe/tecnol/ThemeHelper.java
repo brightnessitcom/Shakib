@@ -41,6 +41,11 @@ public class ThemeHelper {
 
     public static boolean isDarkMode(Context context) {
         try {
+            if (context != null) {
+                int mode = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+                if (mode == Configuration.UI_MODE_NIGHT_YES) return true;
+                if (mode == Configuration.UI_MODE_NIGHT_NO) return false;
+            }
             int systemNightMode = Resources.getSystem().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
             return systemNightMode == Configuration.UI_MODE_NIGHT_YES;
         } catch (Exception e) {

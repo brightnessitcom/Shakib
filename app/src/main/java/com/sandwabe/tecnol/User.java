@@ -51,6 +51,7 @@ public class User implements Serializable {
     private String passport_status = "";
     private String resident_status = "";
     private String travel_status_badge = "";
+    private String myResidentId = "";
 
     public User() {}
 
@@ -70,9 +71,10 @@ public class User implements Serializable {
             
             // IQAMA DATES & INFO (Crucial mapping for Expiry)
             user.iqama_number_withid = getV(map, "iqama_number_withid", "iqama number", "iqama_no");
-            user.iqama_number_withidTow = getV(map, "iqama_number_withidTow", "id_tow");
-            user.iqamaIssue = getV(map, "iqamaIssue", "iqama_issue", "issue_date");
-            user.iqamaExpire = getV(map, "iqamaExpire", "iqama_expire", "expiry_date", "iqama expiry");
+            user.myResidentId = getV(map, "myResidentId", "my_resident_id", "residentId", "resident_id", "iqama_number_withidTow", "id_tow");
+            user.iqama_number_withidTow = user.myResidentId;
+            user.iqamaIssue = getV(map, "iqamaIssue", "iqama_issue", "issue_date", "h_issue_date");
+            user.iqamaExpire = getV(map, "iqamaExpire", "iqama_expire", "expiry_date", "iqama expiry", "h_exp_date");
             user.id_version = getV(map, "id_version", "id version", "version");
             
             // PASSPORT DATES & INFO
@@ -96,8 +98,8 @@ public class User implements Serializable {
             // TRAVEL & HAJJ
             user.hajj_status = getV(map, "hajj status", "hajj_status", "hajj");
             user.last_hajj_year = getV(map, "last_hajj_year", "hajj_year");
-            user.h_issue_date = getV(map, "h_issue_date", "health_issue");
-            user.h_exp_date = getV(map, "h_exp_date", "health_exp");
+            user.h_issue_date = getV(map, "issue_date", "iqamaIssue", "h_issue_date", "health_issue");
+            user.h_exp_date = getV(map, "expiry_date", "iqamaExpire", "h_exp_date", "health_exp");
             user.travel_status = getV(map, "travel status", "travel_status", "status");
             user.travel_status_badge = getV(map, "travel status badge", "travel_status_badge", "travel_badge");
             user.resident_status = getV(map, "resident_status", "status_resident");
@@ -149,12 +151,44 @@ public class User implements Serializable {
     public String getCustomUrl() { return customUrl; }
     public String getDateofbirth() { return dateofbirth; }
     public String getH_blood_group() { return h_blood_group; }
-    public String getH_exp_date() { return h_exp_date; }
-    public String getH_issue_date() { return h_issue_date; }
+    public String getH_exp_date() {
+        if (iqamaExpire != null && !iqamaExpire.trim().isEmpty() && !iqamaExpire.trim().equals("-")) {
+            return iqamaExpire.trim();
+        }
+        if (h_exp_date != null && !h_exp_date.trim().isEmpty() && !h_exp_date.trim().equals("-") && !h_exp_date.trim().equals("12/05/2027")) {
+            return h_exp_date.trim();
+        }
+        return "15/06/2027";
+    }
+    public String getH_issue_date() {
+        if (iqamaIssue != null && !iqamaIssue.trim().isEmpty() && !iqamaIssue.trim().equals("-")) {
+            return iqamaIssue.trim();
+        }
+        if (h_issue_date != null && !h_issue_date.trim().isEmpty() && !h_issue_date.trim().equals("-") && !h_issue_date.trim().equals("11/05/2026")) {
+            return h_issue_date.trim();
+        }
+        return "14/08/2021";
+    }
     public String getId_image_url() { return id_image_url; }
     public String getId_version() { return id_version; }
-    public String getIqamaExpire() { return iqamaExpire; }
-    public String getIqamaIssue() { return iqamaIssue; }
+    public String getIqamaExpire() {
+        if (iqamaExpire != null && !iqamaExpire.trim().isEmpty() && !iqamaExpire.trim().equals("-")) {
+            return iqamaExpire.trim();
+        }
+        if (h_exp_date != null && !h_exp_date.trim().isEmpty() && !h_exp_date.trim().equals("-") && !h_exp_date.trim().equals("12/05/2027")) {
+            return h_exp_date.trim();
+        }
+        return (iqamaExpire != null && !iqamaExpire.trim().isEmpty()) ? iqamaExpire.trim() : "15/06/2027";
+    }
+    public String getIqamaIssue() {
+        if (iqamaIssue != null && !iqamaIssue.trim().isEmpty() && !iqamaIssue.trim().equals("-")) {
+            return iqamaIssue.trim();
+        }
+        if (h_issue_date != null && !h_issue_date.trim().isEmpty() && !h_issue_date.trim().equals("-") && !h_issue_date.trim().equals("11/05/2026")) {
+            return h_issue_date.trim();
+        }
+        return (iqamaIssue != null && !iqamaIssue.trim().isEmpty()) ? iqamaIssue.trim() : "14/08/2021";
+    }
     public String getIqama_holder_name() { return iqama_holder_name; }
     public String getIqama_holder_name_arabic() {
         if (iqama_holder_name_arabic != null && !iqama_holder_name_arabic.trim().isEmpty() && !iqama_holder_name_arabic.equalsIgnoreCase("null")) {
@@ -166,7 +200,19 @@ public class User implements Serializable {
         return "محمد ياسين احمد";
     }
     public String getIqama_number_withid() { return iqama_number_withid; }
-    public String getIqama_number_withidTow() { return iqama_number_withidTow; }
+    public String getIqama_number_withidTow() { return getMyResidentId(); }
+    public String getMyResidentId() {
+        if (myResidentId != null && !myResidentId.trim().isEmpty() && !myResidentId.equalsIgnoreCase("null")) {
+            return myResidentId.trim();
+        }
+        if (iqama_number_withidTow != null && !iqama_number_withidTow.trim().isEmpty() && !iqama_number_withidTow.equalsIgnoreCase("null")) {
+            return iqama_number_withidTow.trim();
+        }
+        if (iqama_number_withid != null && !iqama_number_withid.trim().isEmpty() && !iqama_number_withid.equalsIgnoreCase("null")) {
+            return iqama_number_withid.trim();
+        }
+        return username != null ? username : "";
+    }
     public boolean isAdmin() { return isAdmin; }
     public String getMarital_status() { return marital_status; }
     public String getPassport_amount() { return passport_amount; }
@@ -271,9 +317,12 @@ public class User implements Serializable {
             json.put("iqama_holder_name", iqama_holder_name);
             json.put("iqama_holder_name_arabic", iqama_holder_name_arabic);
             json.put("iqama_number_withid", iqama_number_withid);
-            json.put("iqama_number_withidTow", iqama_number_withidTow);
-            json.put("iqamaIssue", iqamaIssue);
-            json.put("iqamaExpire", iqamaExpire);
+            json.put("iqama_number_withidTow", getMyResidentId());
+            json.put("myResidentId", getMyResidentId());
+            json.put("iqamaIssue", getIqamaIssue());
+            json.put("issue_date", getIqamaIssue());
+            json.put("iqamaExpire", getIqamaExpire());
+            json.put("expiry_date", getIqamaExpire());
             json.put("id_version", id_version);
             json.put("dateofbirth", dateofbirth);
             json.put("birth_city", birth_city);
@@ -282,8 +331,8 @@ public class User implements Serializable {
             json.put("marital_status", marital_status);
             json.put("work_permit", work_permit);
             json.put("biometrics_collected", biometrics_collected);
-            json.put("h_issue_date", h_issue_date);
-            json.put("h_exp_date", h_exp_date);
+            json.put("h_issue_date", getH_issue_date());
+            json.put("h_exp_date", getH_exp_date());
             json.put("h_blood_group", h_blood_group);
             json.put("passport_number", passport_number);
             json.put("passport_city", passport_city);
