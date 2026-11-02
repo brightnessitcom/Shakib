@@ -251,9 +251,9 @@ public class HomeFragment extends Fragment {
                 cardQuickSurvey.setVisibility(View.GONE);
             }
         }
-        View btnStartSurvey = view.findViewById(R.id.btnStartSurvey);
-        if (btnStartSurvey != null) {
-            btnStartSurvey.setOnClickListener(v -> {
+        View ivCloseSurvey = view.findViewById(R.id.ivCloseSurvey);
+        if (ivCloseSurvey != null) {
+            ivCloseSurvey.setOnClickListener(v -> {
                 View card = view.findViewById(R.id.cardQuickSurvey);
                 if (card != null) {
                     card.animate().alpha(0f).translationY(-15f).setDuration(220).withEndAction(() -> card.setVisibility(View.GONE)).start();
@@ -261,6 +261,12 @@ public class HomeFragment extends Fragment {
                 if (getContext() != null) {
                     getContext().getSharedPreferences("AppConfig", Context.MODE_PRIVATE).edit().putBoolean("pref_survey_dismissed", true).apply();
                 }
+            });
+        }
+        View btnStartSurvey = view.findViewById(R.id.btnStartSurvey);
+        if (btnStartSurvey != null) {
+            btnStartSurvey.setOnClickListener(v -> {
+                Toast.makeText(getContext(), R.string.survey_title, Toast.LENGTH_SHORT).show();
             });
         }
 

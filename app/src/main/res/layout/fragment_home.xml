@@ -200,13 +200,29 @@
                         android:layout_alignParentTop="true"
                         android:contentDescription="Survey" />
 
+                    <ImageView
+                        android:id="@+id/ivCloseSurvey"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_survey_close"
+                        app:tint="@color/survey_card_action"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Close Survey"
+                        android:clickable="true"
+                        android:focusable="true" />
+
                     <LinearLayout
                         android:id="@+id/llSurveyContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_toEndOf="@id/ivSurveyIcon"
-                        android:layout_marginStart="12dp">
+                        android:layout_toStartOf="@id/ivCloseSurvey"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="8dp">
 
                         <TextView
                             android:layout_width="wrap_content"

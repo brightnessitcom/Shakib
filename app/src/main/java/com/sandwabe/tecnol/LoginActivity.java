@@ -212,6 +212,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void attemptLogin(final String username, final String password, final boolean rememberMe) {
         Log.d("LoginActivity", "Attempting login for ID: " + username);
+        ApiClient.clearCachedUser(this);
 
         Button btnLogin = findViewById(R.id.btnLogin);
         if (btnLogin != null) {
@@ -224,7 +225,7 @@ public class LoginActivity extends AppCompatActivity {
             hideLoginLoading();
             Toast.makeText(LoginActivity.this, "Connection timed out. Please check your internet connection.", Toast.LENGTH_LONG).show();
         };
-        loginHandler.postDelayed(loginTimeoutRunnable, 7000);
+        loginHandler.postDelayed(loginTimeoutRunnable, 15000);
 
         final boolean[] responded = {false};
 
@@ -259,7 +260,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        if (password.equals(user.getPassword())) {
+        if (password.trim().equals(user.getPassword() != null ? user.getPassword().trim() : "")) {
             ApiClient.setCachedUser(this, user);
             saveLoginCredentials(username, password, rememberMe);
 

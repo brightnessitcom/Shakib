@@ -46,9 +46,11 @@ public class Settingsvact extends AppCompatActivity {
         edit.putBoolean(LoginActivity.KEY_IS_LOGGED_IN, false);
         edit.putBoolean(LoginActivity.KEY_IS_VERIFIED, false);
         edit.remove(SessionManager.KEY_LOGIN_TIMESTAMP);
+        edit.remove("cached_user_json");
         edit.putString(LoginActivity.KEY_USERNAME, null);
         edit.putString(LoginActivity.KEY_PASSWORD, null);
         edit.apply();
+        ApiClient.clearCachedUser(this);
     }
 
     private void loadLocale() {

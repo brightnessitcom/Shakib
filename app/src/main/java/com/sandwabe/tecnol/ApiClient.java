@@ -40,9 +40,9 @@ public class ApiClient {
     private static User cachedUser = null;
 
     private static final OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(4, TimeUnit.SECONDS)
-            .readTimeout(4, TimeUnit.SECONDS)
-            .writeTimeout(4, TimeUnit.SECONDS)
+            .connectTimeout(12, TimeUnit.SECONDS)
+            .readTimeout(15, TimeUnit.SECONDS)
+            .writeTimeout(15, TimeUnit.SECONDS)
             .retryOnConnectionFailure(true)
             .build();
 
@@ -51,33 +51,58 @@ public class ApiClient {
         void onError(String errorMessage);
     }
 
+    private static boolean isLocalDevUrl(String url) {
+        if (url == null) return false;
+        String lower = url.toLowerCase();
+        return lower.contains("192.168.")
+                || lower.contains("127.0.0.1")
+                || lower.contains("10.0.2.2")
+                || lower.contains("localhost");
+    }
+
     public static List<String> getCandidateBaseUrls(Context context) {
         List<String> list = new ArrayList<>();
+        list.add(PRODUCTION_URL);
+
         if (context != null) {
             SharedPreferences prefs = context.getSharedPreferences("AppConfig", Context.MODE_PRIVATE);
             String custom = prefs.getString(PREF_API_URL, null);
-            if (custom != null && !custom.trim().isEmpty()) {
-                list.add(custom.trim());
+            if (custom != null) {
+                if (isLocalDevUrl(custom)) {
+                    prefs.edit().remove(PREF_API_URL).apply();
+                } else if (!custom.trim().isEmpty() && !list.contains(custom.trim())) {
+                    list.add(custom.trim());
+                }
             }
         }
-        if (!list.contains(PRODUCTION_URL)) list.add(PRODUCTION_URL);
-        if (!list.contains("http://127.0.0.1:3000")) list.add("http://127.0.0.1:3000");
-        if (!list.contains("http://192.168.0.117:3000")) list.add("http://192.168.0.117:3000");
-        if (!list.contains("http://10.0.2.2:3000")) list.add("http://10.0.2.2:3000");
         return list;
     }
 
     public static String getBaseUrl(Context context) {
         if (context == null) return PRODUCTION_URL;
         SharedPreferences prefs = context.getSharedPreferences("AppConfig", Context.MODE_PRIVATE);
-        return prefs.getString(PREF_API_URL, PRODUCTION_URL);
+        String custom = prefs.getString(PREF_API_URL, null);
+        if (custom != null) {
+            if (isLocalDevUrl(custom)) {
+                prefs.edit().remove(PREF_API_URL).apply();
+                return PRODUCTION_URL;
+            }
+            if (!custom.trim().isEmpty()) {
+                return custom.trim();
+            }
+        }
+        return PRODUCTION_URL;
     }
 
     public static void setBaseUrl(Context context, String newUrl) {
         if (context == null || newUrl == null) return;
+        String trimmed = newUrl.trim();
+        if (isLocalDevUrl(trimmed)) {
+            return;
+        }
         context.getSharedPreferences("AppConfig", Context.MODE_PRIVATE)
                 .edit()
-                .putString(PREF_API_URL, newUrl.trim())
+                .putString(PREF_API_URL, trimmed)
                 .apply();
     }
 
