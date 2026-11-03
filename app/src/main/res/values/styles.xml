@@ -13,7 +13,12 @@
 
   <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     <item name="android:windowBackground">@color/app_background</item>
-    <item name="android:windowFullscreen">true</item>
+    <item name="android:statusBarColor">@color/app_background</item>
+    <item name="android:navigationBarColor">@color/app_background</item>
+    <item name="android:windowLightStatusBar">true</item>
+    <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    <item name="android:windowSplashScreenBackground" tools:targetApi="31">@color/app_background</item>
+    <item name="android:windowFullscreen">false</item>
     <item name="android:windowNoTitle">true</item>
   </style>
 

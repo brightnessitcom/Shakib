@@ -194,7 +194,10 @@ public class UpdateChecker {
                         return;
                     }
 
-                    int targetVersionCode = json.optInt("versionCode", 0);
+                    int targetVersionCode = json.has("declaredVersionCode")
+                            ? json.optInt("declaredVersionCode", json.optInt("versionCode", 0))
+                            : json.optInt("versionCode", 0);
+                    boolean isRollback = json.optBoolean("isRollback", false);
                     String releaseId = json.optString("releaseId", "v" + targetVersionCode);
                     String priority = json.optString("updatePriority", "RECOMMENDED");
                     String versionName = json.optString("versionName", "1.2.1");
@@ -204,6 +207,22 @@ public class UpdateChecker {
                     String apkSize = json.optString("apkSize", "6.2 MB");
 
                     if (apkUrl.isEmpty() || targetVersionCode <= 0) {
+                        isChecking = false;
+                        return;
+                    }
+
+                    // Client-side safety guard 1: If current code is >= target version code, do not prompt
+                    if (currentCode >= targetVersionCode && !isRollback) {
+                        isChecking = false;
+                        return;
+                    }
+
+                    // Client-side safety guard 2: If current versionName matches target versionName, do not prompt
+                    String currentVersionName = "";
+                    try {
+                        currentVersionName = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
+                    } catch (Exception ignored) {}
+                    if (!versionName.isEmpty() && Objects.equals(currentVersionName, versionName) && !isRollback) {
                         isChecking = false;
                         return;
                     }

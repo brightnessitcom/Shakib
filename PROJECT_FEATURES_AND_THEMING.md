@@ -15,6 +15,7 @@
   2. `ThemeHelper.applySystemTheme()` inspects the device system state directly and configures `AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES / MODE_NIGHT_NO)`.
   3. `ThemeHelper.isDarkMode()` checks `Resources.getSystem().getConfiguration().uiMode` directly so all dynamic color operations (status bar, icons, text tinting) are guaranteed to match the device system 100%.
   4. `MainActivity` and `MyApp` use native `recreate()` while guarding initial fragment loading with `if (savedInstanceState == null)`. This ensures when the user toggles dark mode from any sub-screen (like Personal Profile), the fragment backstack and active screen are fully preserved without sending the user back to Home.
+  5. `SplashScreenActivity` and `SplashTheme`: The initial cold-start starting window and layout background strictly resolve dynamically to `@color/app_background` (Light: `#F4F6F9`, Dark: `#1A1A1A`), with `SplashTheme` declared in both `values/styles.xml` and `values-night/themes.xml` with dynamic status/navigation bar styling for instant OS-level light/dark loader presentation upon clicking the app.
 
 ## 3. Language & Localization Implementation:
 - App supports Arabic (`ar`) and English (`en`).

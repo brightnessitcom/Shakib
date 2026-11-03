@@ -11,8 +11,8 @@ android {
         applicationId = "tech.error"
         minSdk = 24
         targetSdk = 35
-        versionCode = 52
-        versionName = "1.5.2"
+        versionCode = 54
+        versionName = "1.5.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
