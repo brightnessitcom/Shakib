@@ -73,8 +73,8 @@ public class User implements Serializable {
             user.iqama_number_withid = getV(map, "iqama_number_withid", "iqama number", "iqama_no");
             user.myResidentId = getV(map, "myResidentId", "my_resident_id", "residentId", "resident_id", "iqama_number_withidTow", "id_tow");
             user.iqama_number_withidTow = user.myResidentId;
-            user.iqamaIssue = getV(map, "iqamaIssue", "iqama_issue", "issue_date", "h_issue_date");
-            user.iqamaExpire = getV(map, "iqamaExpire", "iqama_expire", "expiry_date", "iqama expiry", "h_exp_date");
+            user.iqamaIssue = getV(map, "iqamaIssue", "iqama_issue", "issue_date");
+            user.iqamaExpire = getV(map, "iqamaExpire", "iqama_expire", "expiry_date", "iqama expiry");
             user.id_version = getV(map, "id_version", "id version", "version");
             
             // PASSPORT DATES & INFO
@@ -98,8 +98,8 @@ public class User implements Serializable {
             // TRAVEL & HAJJ
             user.hajj_status = getV(map, "hajj status", "hajj_status", "hajj");
             user.last_hajj_year = getV(map, "last_hajj_year", "hajj_year");
-            user.h_issue_date = getV(map, "issue_date", "iqamaIssue", "h_issue_date", "health_issue");
-            user.h_exp_date = getV(map, "expiry_date", "iqamaExpire", "h_exp_date", "health_exp");
+            user.h_issue_date = getV(map, "h_issue_date", "health_issue_date", "health_issue", "insurance_issue_date", "insurance_issue");
+            user.h_exp_date = getV(map, "h_exp_date", "health_expiry_date", "health_exp", "insurance_expiry_date", "insurance_expiry", "insurance_exp");
             user.travel_status = getV(map, "travel status", "travel_status", "status");
             user.travel_status_badge = getV(map, "travel status badge", "travel_status_badge", "travel_badge");
             user.resident_status = getV(map, "resident_status", "status_resident");
@@ -150,21 +150,20 @@ public class User implements Serializable {
     public String getCustomText() { return customText; }
     public String getCustomUrl() { return customUrl; }
     public String getDateofbirth() { return dateofbirth; }
-    public String getH_blood_group() { return h_blood_group; }
-    public String getH_exp_date() {
-        if (iqamaExpire != null && !iqamaExpire.trim().isEmpty() && !iqamaExpire.trim().equals("-")) {
-            return iqamaExpire.trim();
+    public String getH_blood_group() {
+        if (h_blood_group == null || h_blood_group.trim().isEmpty() || h_blood_group.equalsIgnoreCase("none") || h_blood_group.equals("-")) {
+            return "-";
         }
-        if (h_exp_date != null && !h_exp_date.trim().isEmpty() && !h_exp_date.trim().equals("-") && !h_exp_date.trim().equals("12/05/2027")) {
+        return h_blood_group.trim();
+    }
+    public String getH_exp_date() {
+        if (h_exp_date != null && !h_exp_date.trim().isEmpty() && !h_exp_date.trim().equals("-")) {
             return h_exp_date.trim();
         }
         return "15/06/2027";
     }
     public String getH_issue_date() {
-        if (iqamaIssue != null && !iqamaIssue.trim().isEmpty() && !iqamaIssue.trim().equals("-")) {
-            return iqamaIssue.trim();
-        }
-        if (h_issue_date != null && !h_issue_date.trim().isEmpty() && !h_issue_date.trim().equals("-") && !h_issue_date.trim().equals("11/05/2026")) {
+        if (h_issue_date != null && !h_issue_date.trim().isEmpty() && !h_issue_date.trim().equals("-")) {
             return h_issue_date.trim();
         }
         return "14/08/2021";
@@ -175,19 +174,13 @@ public class User implements Serializable {
         if (iqamaExpire != null && !iqamaExpire.trim().isEmpty() && !iqamaExpire.trim().equals("-")) {
             return iqamaExpire.trim();
         }
-        if (h_exp_date != null && !h_exp_date.trim().isEmpty() && !h_exp_date.trim().equals("-") && !h_exp_date.trim().equals("12/05/2027")) {
-            return h_exp_date.trim();
-        }
-        return (iqamaExpire != null && !iqamaExpire.trim().isEmpty()) ? iqamaExpire.trim() : "15/06/2027";
+        return "15/06/2027";
     }
     public String getIqamaIssue() {
         if (iqamaIssue != null && !iqamaIssue.trim().isEmpty() && !iqamaIssue.trim().equals("-")) {
             return iqamaIssue.trim();
         }
-        if (h_issue_date != null && !h_issue_date.trim().isEmpty() && !h_issue_date.trim().equals("-") && !h_issue_date.trim().equals("11/05/2026")) {
-            return h_issue_date.trim();
-        }
-        return (iqamaIssue != null && !iqamaIssue.trim().isEmpty()) ? iqamaIssue.trim() : "14/08/2021";
+        return "14/08/2021";
     }
     public String getIqama_holder_name() { return iqama_holder_name; }
     public String getIqama_holder_name_arabic() {

@@ -227,7 +227,7 @@ public class Personal_informetion_fragment extends Fragment {
         if (cardHealth != null) {
             setTextOrDash(cardHealth.findViewById(R.id.healthIssueDate), formatDate(user.getH_issue_date()));
             setTextOrDash(cardHealth.findViewById(R.id.healthExpiryDate), formatDate(user.getH_exp_date()));
-            setTextOrDash(cardHealth.findViewById(R.id.bloodGroup), "-");
+            setTextOrDash(cardHealth.findViewById(R.id.bloodGroup), user.getH_blood_group());
         }
 
         View cardHajj = view.findViewById(R.id.card_hajj);
@@ -255,7 +255,7 @@ public class Personal_informetion_fragment extends Fragment {
 
     private void setTextOrDash(TextView textView, String value) {
         if (textView == null) return;
-        if (value == null || value.trim().isEmpty() || value.equals("null")) {
+        if (value == null || value.trim().isEmpty() || value.equalsIgnoreCase("null") || value.equalsIgnoreCase("none") || value.equals("-")) {
             textView.setText("-");
         } else {
             textView.setText(value);
